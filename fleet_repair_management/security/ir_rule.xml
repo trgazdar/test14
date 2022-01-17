@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <record id="property_rule_workorder_head_technician" model="ir.rule">
+            <field name="name">Head Technician  Work order rule</field>
+            <field name="model_id" ref="model_fleet_workorder"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[(4, ref('group_fleet_repair_head_technician')), (4, ref('group_fleet_repair_directeur_commercial'))]"/>
+        </record>
+        <record id="property_rule_workorder_technician" model="ir.rule">
+            <field name="name">Technician  Workorder</field>
+            <field name="model_id" ref="model_fleet_workorder"/>
+            <field name="domain_force">[('user_id', '=', user.id)]</field>
+            <field name="groups" eval="[(4, ref('group_fleet_repair_technician'))]"/>
+        </record>
+     
+</odoo>

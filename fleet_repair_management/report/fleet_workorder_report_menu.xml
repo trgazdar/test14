@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    
+    <report id="fleet_workorder_report_id"
+                    string="Fleet Workorder"
+                    model="fleet.workorder"
+                    report_type="qweb-pdf"
+                    name="fleet_repair_management.fleet_workorder_template"/>
+</openerp>
