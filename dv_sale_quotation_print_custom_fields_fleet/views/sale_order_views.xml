@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_order_form" model="ir.ui.view">
+        <field name="name">sale.order.inherit.view.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='require_payment']" position="after">
+                <field name="l10n_pe_edi_amount_advance"/>
+                <field name="l10n_pe_edi_amount_base"/>
+                <field name="l10n_pe_edi_amount_exonerated"/>
+                <field name="l10n_pe_edi_amount_unaffected"/>
+                <field name="l10n_pe_edi_amount_igv"/>
+                <field name="l10n_pe_edi_amount_isc"/>
+                <field name="l10n_pe_edi_amount_icbper"/>
+                <field name="l10n_pe_edi_amount_others"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
