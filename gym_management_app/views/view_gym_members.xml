@@ -163,6 +163,16 @@
             </form>
         </field>
     </record>
+    <record id="view_employee_filter" model="ir.ui.view">
+        <field name="name">hr.employee.inherit.view.search</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='job_id']" position="after">
+                <field name="vat"/>
+            </xpath>
+        </field>
+    </record>
     <record id="action_gym_members" model="ir.actions.act_window">
         <field name="name">Gym Members</field>
         <field name="res_model">hr.employee</field>
@@ -179,16 +189,6 @@
 					can easily find all the information you need for each person;
 					contact data, job position, availability, etc.
 				</p>
-        </field>
-    </record>
-    <record id="view_employee_filter" model="ir.ui.view">
-        <field name="name">hr.employee.inherit.view.search</field>
-        <field name="model">hr.employee</field>
-        <field name="inherit_id" ref="hr.view_employee_filter"/>
-        <field name="arch" type="xml">
-            <xpath expr="//field[@name='job_id']" position="after">
-                <field name="vat"/>
-            </xpath>
         </field>
     </record>
     <record id="mail_activity_tree_view" model="ir.actions.act_window.view">
