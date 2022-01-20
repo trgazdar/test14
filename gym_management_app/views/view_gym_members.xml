@@ -82,6 +82,7 @@
 									<field name="name_sequence"/>
 									<field name="address"/>
 									<field name="gender"/>
+									<field name="vat"/>
 								</group>
 							<group>
 									<field name="birth_date"/>

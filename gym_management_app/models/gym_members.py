@@ -30,6 +30,7 @@ class GymMembers(models.Model):
     invoice_amount = fields.Integer(string="Total",compute="calculated_invoive_amount",copy=False,store=True)
     invoice_number = fields.Integer(string="Count",compute="calculated_invoive_count",copy=False,store=True)
     invoice_id = fields.Many2one('account.move','Account Invoice')
+    vat = fields.Char(string='DNI')
 
     @api.model
     def _get_date_diff(self, date_from=False, date_to=False):
