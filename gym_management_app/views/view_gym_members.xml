@@ -191,6 +191,21 @@
 				</p>
         </field>
     </record>
+
+    <!-- hr.employee inherit kanban view -->
+    <record id="hr_kanban_view_employees" model="ir.ui.view">
+        <field name="name">hr.employee.inherit.view.kanban</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.hr_kanban_view_employees"/>
+        <field name="arch" type="xml">
+            <!-- Add you xpath here -->
+            <xpath expr="//li[@t-if='record.work_phone.raw_value']" position="after">
+                <!-- Add your fields here -->
+                <li><field name="membership_active"/></li>
+            </xpath>
+        </field>
+    </record>
+
     <record id="mail_activity_tree_view" model="ir.actions.act_window.view">
         <field eval="1" name="sequence"/>
         <field name="view_mode">kanban</field>

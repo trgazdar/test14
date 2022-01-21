@@ -31,6 +31,14 @@ class GymMembers(models.Model):
     invoice_number = fields.Integer(string="Count",compute="calculated_invoive_count",copy=False,store=True)
     invoice_id = fields.Many2one('account.move','Account Invoice')
     vat = fields.Char(string='DNI')
+    membership_active=fields.Char(string='Activo', compute="_compute_membership_active")
+
+    def _compute_membership_active(self):
+        for record in self:
+            if record.start_date <= fields.Date.today() and fields.Date.today()<= record.end_date :
+                record.membership_active="Activo"
+            else:
+                record.membership_active="Inactivo"
 
     @api.model
     def _get_date_diff(self, date_from=False, date_to=False):
