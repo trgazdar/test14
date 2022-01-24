@@ -16,7 +16,7 @@ class Movimiento(models.Model):
     notas=fields.Html("Notas")
     currency_id=fields.Many2one("res.currency", default=162)
     
-    message_ids=fields.One2many("sa.movimiento","mail.thread")
+    message_ids=fields.One2many("sa.movimiento","message_ids")
 
     #El Many2one puede existir sin el One2many, pero no al reves
     user_id=fields.Many2one("res.users",string="Usuario", default=lambda self: self.env.user.id)
