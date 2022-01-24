@@ -44,7 +44,7 @@
             <tree decoration-success="type_move=='ingreso'" decoration-danger="type_move=='gasto'">
                 <field name="date" optional="show"/>
                 <field name="name" />
-                <field name="type_move"  />
+                <field name="type_move" optional="show" />
                 <field name="amount" required=1 widget="monetary" options="{'currency_field':'currency_id'}" optional="show"/>
                 <field name="tag_ids" optional="hide" widget="many2many_tags" string="Etiquetas"/>
                 <field name="category_id" optional="hide" />
