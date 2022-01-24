@@ -4,7 +4,7 @@ from odoo import fields, models
 class Movimiento(models.Model):
     _name="sa.movimiento" #sa_movimiento
     _description = "Movimiento"
-    _inherit="mail.thread"
+    
     
     #El ID odoo lo maneja solo
     name=fields.Char("Nombre")
@@ -16,7 +16,7 @@ class Movimiento(models.Model):
     notas=fields.Html("Notas")
     currency_id=fields.Many2one("res.currency", default=162)
     
-    message_ids=fields.One2many("sa.movimiento","message_id")
+    message_ids=fields.One2many("mail.thread","message_ids")
 
     #El Many2one puede existir sin el One2many, pero no al reves
     user_id=fields.Many2one("res.users",string="Usuario", default=lambda self: self.env.user.id)
@@ -57,3 +57,8 @@ class ResUsers(models.Model):
     #Le doy el modelo(tabla) y campo al que hara referencia
     movimiento_ids=fields.One2many("sa.movimiento","user_id")
     
+class Mailing(models.model):
+    _inherit="mail.thread"
+
+    notificacion_ids=fields.One2many("sa.movimiento","message_ids")
+        
