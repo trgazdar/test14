@@ -101,13 +101,15 @@
         <field name="name">view.form.sa.category</field>
         <field name="model">sa.category</field>
         <field name="arch" type="xml">
-            <sheet>
-                <group>
-                    <field name="name"/>
-                    <button name="ver_movimientos" type="object" string="Ver Movimiento" />
-                </group>
-            
-            </sheet>
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <button name="ver_movimientos" type="object" string="Ver Movimiento" />
+                    </group>
+                
+                </sheet>
+            </form>
         </field>
 
     </record>
