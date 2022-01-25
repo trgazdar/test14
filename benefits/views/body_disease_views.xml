@@ -1,0 +1,87 @@
+<odoo>
+    <data>
+        <record id="body_disease_view" model="ir.ui.view">
+            <field name="name">body.disease.form</field>
+            <field name="model">body.disease</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only" string="Enfermedad" />
+                            <h1>
+                                <field name="name" />
+                            </h1>
+                            <div name="options_active" ></div>
+                            <group>
+                                <field name="description"/>
+                                <field name="internal_code"/>
+                            </group>
+                        </div>
+                        <notebook>
+                            <page name="illness_function" string="Síntomas a funciones">
+                                <field name="illness_ids">
+                                    <tree editable="bottom">
+                                        <field name="function_id"/>
+                                        <field name="name"/>
+                                        <field name="description"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page name="functions" string="Funciones afectadas">
+                                <field name="function_ids">
+                                    <tree create="false" delete="false" editable="bottom">
+                                        <field name="name" readonly="1"/>
+                                        <field name="description"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page name="systems" string="Sistemas afectados">
+                                <field name="system_ids">
+                                    <tree create="false" delete="false" editable="bottom">
+                                        <field name="name" readonly="1"/>
+                                        <field name="description"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page name="organs" string="Organos afectados">
+                                <field name="organ_ids">
+                                    <tree create="false" delete="false" editable="bottom">
+                                        <field name="name" readonly="1"/>
+                                        <field name="description"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="body_disease_tree_view" model="ir.ui.view">
+            <field name="name">body.disease.tree</field>
+            <field name="model">body.disease</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="internal_code" />
+                    <field name="illness_ids" widget="many2many_tags"/>
+                    <field name="system_ids" optional="hide" widget="many2many_tags"/>
+                    <field name="organ_ids" optional="hide" widget="many2many_tags"/>
+                </tree>
+            </field>
+        </record>
+        <record id="body_disease_action" model="ir.actions.act_window">
+            <field name="name">Enfermedades del cuerpo</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">body.disease</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Aún no hay enfermedades creadas.
+                </p>
+                <p>
+                    Ingrese una nueva enfermedad.
+                </p>
+            </field>
+        </record>
+    </data>
+</odoo>

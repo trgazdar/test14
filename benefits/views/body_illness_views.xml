@@ -1,0 +1,33 @@
+<odoo>
+    <data>
+        <record id="body_illness_tree_view" model="ir.ui.view">
+            <field name="name">body.illness.tree</field>
+            <field name="model">body.illness</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="disease_id" />
+                    <field name="function_id" />
+                    <field name="name" />
+                    <field name="internal_code" />
+                    <field name="description"/>
+                    <field name="system_id" optional="hide" readonly="1"/>
+                    <field name="organ_id" optional="hide" readonly="1"/>
+                </tree>
+            </field>
+        </record>
+        <record id="body_illness_action" model="ir.actions.act_window">
+            <field name="name">Dolencias del cuerpo</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">body.illness</field>
+            <field name="view_mode">tree</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Aún no hay dolencias del cuerpo creados.
+                </p>
+                <p>
+                    Ingrese una nueva dolencias del cuerpo.
+                </p>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_body_illness_readonly,access_body_illness,model_body_illness,,1,0,0,0
+access_body_disease_readonly,access_body_disease,model_body_disease,,1,0,0,0
+access_body_system_readonly,access_body_system,model_body_system,,1,0,0,0
+access_body_organ_readonly,access_body_organ,model_body_organ,,1,0,0,0
+access_body_function_readonly,access_body_function,model_body_function,,1,0,0,0
+
+access_body_illness,access_body_illness,model_body_illness,group_benefits_filler,1,1,1,1
+access_body_disease,access_body_disease,model_body_disease,group_benefits_filler,1,1,1,1
+access_body_system,access_body_system,model_body_system,group_benefits_filler,1,1,1,1
+access_body_organ,access_body_organ,model_body_organ,group_benefits_filler,1,1,1,1
+access_body_function,access_body_function,model_body_function,group_benefits_filler,1,1,1,1
