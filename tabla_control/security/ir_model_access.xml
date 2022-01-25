@@ -1,5 +1,9 @@
 
 <odoo>
+    <record model="ir.module.ControlGuias" id="module_controlguias_tabla_control">
+        <field name="name">Beneficios</field>
+        <field name="description">Administra los beneficios.</field>
+    </record>
 
     
 

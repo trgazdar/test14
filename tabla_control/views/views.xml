@@ -2,7 +2,7 @@
     
 
     <!--Acciones de ventana-->
-    <record id="action_view_contolguias" model="ir.actions.act_window">
+    <record id="action_view_controlguias" model="ir.actions.act_window">
         <field name="name">Control de Guias</field>
         <field name="res_model">control_guias</field>
     </record>
