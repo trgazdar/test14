@@ -1,6 +1,44 @@
-
 <odoo>
+    
+
+    <!--Acciones de ventana-->
+    <record id="action_view_contolguias" model="ir.actions.act_window">
+        <field name="name">Control de Guias</field>
+        <field name="res_model">control_guias</field>
+    </record>
+
+    <record id="action_view_facturacion" model="ir.actions.act_window">
+        <field name="name">Facturacion</field>
+        <field name="res_model">facturacion</field>
+    </record>
+
 
     
+    <!--Menus-->
+
+    <menuitem
+        id="menu_main_tabla_control"
+        parent=""
+        name="Tabla Control"
+        action="tabla_control.action_view_controlguias"/>
+
+    <menuitem
+        id="menu_controlguias"
+        name="Control de guias"
+        parent="tabla_control.menu_main_tabla_control"
+        action="tabla_control.action_view_controlguias"/>
+    
+    <menuitem
+        id="menu_mas"
+        name="Mas"
+        parent="tabla_control.menu_main_tabla_control"
+        action="tabla_control.action_view_facturacion"/>
+
+    <menuitem
+        id="menu_facturacion"
+        name="Facturacion"
+        parent="tabla_control.menu_mas"
+        action="tabla_control.action_view_facturacion"/>
+
 
 </odoo>

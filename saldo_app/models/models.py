@@ -18,6 +18,7 @@ class Movimiento(models.Model):
     
 
     #El Many2one puede existir sin el One2many, pero no al reves
+    #Nombre del modelo al que debo relacionar, muchos movimientos son de 1 usuario
     user_id=fields.Many2one("res.users",string="Usuario", default=lambda self: self.env.user.id)
     category_id=fields.Many2one("sa.category","Categoria")
     

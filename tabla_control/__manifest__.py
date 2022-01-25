@@ -4,6 +4,6 @@
     "author":"Aldahir Rojas",
     "version":"1.0",
     "depends":["base"],
-    "data":["views/views.xml"]
+    "data":["views/views.xml","security/ir_model_access.xml"]
 
 }
