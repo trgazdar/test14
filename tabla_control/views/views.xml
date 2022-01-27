@@ -19,6 +19,7 @@
               <field name="servintes" />
               <field name="cliente_final_id" />
               <field name="valor" required="1"/>
+              <field name="estado" required="1"/>
           </tree>
         </field>
     </record>
