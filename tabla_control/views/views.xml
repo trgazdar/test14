@@ -51,7 +51,7 @@
     <menuitem
         id="menu_controlguias"
         name="Control de guias"
-        parent="tabla_control.menu_main_tabla_control"
+        parent="tabla_control.menu_mas"
         action="tabla_control.action_view_controlguias"/>
     
     <menuitem
