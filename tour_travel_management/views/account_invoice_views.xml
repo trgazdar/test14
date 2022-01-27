@@ -1,0 +1,38 @@
+<odoo>
+    <record id ="tour_package_invoice" model="ir.ui.view">
+        <field name="name">tour.package.invoice</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type ="xml">
+            <field name="partner_id" position="after">
+                <field name="package_id"/>
+            </field>
+            <page id="invoice_tab" position="after">
+                <page string="Passenger Details">
+                    <field name="passenger_ids" context="{'default_package_id':package_id}" readonly='1'>
+                        <tree>
+                            <field name="partner_id"/>
+                            <field name="age"/>
+                            <field name="gender"/>
+                            <field name="identities_images"/>
+                            <field name="remarks"/>
+                        </tree>
+                        <form>
+                            <group col='4' colspan='4'>
+                                <field name="partner_id"/>
+                                <field name="age" required='1'/>
+                                <field name="gender" required='1'/>
+                                <field name="remarks"/>
+                                <field name="package_id"/>
+                            </group>
+                            <group>
+                                <field name="identities_images" widget="many2many_binary" required='1'/>
+                            </group>
+                        </form>
+                    </field>
+                </page>
+            </page>
+        </field>
+    </record>
+
+</odoo>

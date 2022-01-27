@@ -1,0 +1,15 @@
+<odoo>
+    <template id="website.tours" name="Tours">
+        <t t-call="website.layout">
+            <section class="oe_structure">
+                <section style="height: 70vh; background-image: url(&quot;/website_tour_agency/static/src/img/tours_header.jpg&quot;);" class="s_fix_bg_snippet s_fix_bg_option s_fix_bg_snippet oe_img_bg oe_custom_bg">
+                    <div class="container-fluid s_fix_bg_title text-center" style="height:70vh; background-color: rgba(0,0,0,0.5);">
+                        <span style="color: rgb(254, 193, 7); font-family: Lora, serif; font-size: 40px; font-style: italic; font-weight: 600; letter-spacing: 2px; text-transform: capitalize;">Tours</span>
+                        <br />
+                        <h4 class="col-md-8 col-md-offset-2" style="color:white;"> Lorem Ipsum is simply dummy text of the printing and typesetting industry</h4>
+                    </div>
+                </section>
+            </section>
+        </t>
+    </template>
+</odoo>

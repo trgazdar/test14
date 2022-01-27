@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="product_template_form_view_inherit" model="ir.ui.view">
+        <field name="name">product.template.form.view.inherit</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='options']/div[2]" position="after">
+                <div>
+                    <field name="hotel_ok" />
+                    <label for="hotel_ok" />
+                </div>
+            </xpath>
+            <xpath expr="//page[@name='sales']" position="after">
+                <page string="Hotel Details" name="hotel_details" attrs="{'invisible':[('hotel_ok','!=',True)]}">
+                    <group>
+                        <label for="street" string="Hotel Address" />
+                        <div class="o_address_format">
+                            <field name="street" placeholder="Street..." class="o_address_street" />
+                            <field name="street2" placeholder="Street 2..." class="o_address_street" />
+                            <field name="city" placeholder="City" class="o_address_city" />
+                            <field name="state_id" class="o_address_state" placeholder="State" options="{&quot;no_open&quot;: True}" />
+                            <field name="zip" placeholder="ZIP" class="o_address_zip" />
+                            <field name="country_id" placeholder="Country" class="o_address_country" options="{&quot;no_open&quot;: True, &quot;no_create&quot;: True}" />
+                        </div>
+                    </group>
+                    <group>
+                        <field name="hotel_tag" />
+                        <field name="rating" widget="priority" />
+                        <field name="converted_amount" invisible="True" />
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+    <record id="product_view_extend_form_hotel_ok" model="ir.ui.view">
+        <field name="name">product.view.extend.form.hotel.ok</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='facilities']" position="attributes">
+                <attribute name="attrs">{'invisible':[('hotel_ok','!=',True)]}</attribute>
+            </xpath>
+        </field>
+    </record>
+    <record id="sale_quotation_form_view_extend_for_website_packages" model="ir.ui.view">
+        <field name="name">sale.order.view.form.extend.for.website.packages</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//form/sheet/div[hasclass('oe_title')]" position="before">
+                <field name="image_medium" widget="image" class="oe_avatar" attrs="{'invisible':[('is_package','=',False)]}" invisible="not context.get('hide_sale') or not context.get('display_package')" />
+            </xpath>
+            <xpath expr="//group[@name='technical']" position="after">
+                <separator colspan="4" string="Package Information" invisible="not context.get('display_package')" />
+                <group invisible="not context.get('display_package')">
+                    <field name="package_tag" />
+                </group>
+                <group invisible="not context.get('display_package')" colspan="4">
+                    <field name="package_overview" />
+                </group>
+                <separator colspan="4" string="Package Images" invisible="not context.get('display_package')" />
+                <field name="package_images" mode="kanban" context="{'default_name': name}" invisible="not context.get('display_package')">
+                    <kanban>
+                        <field name="name" />
+                        <field name="image" />
+                        <templates>
+                            <t t-name="kanban-box">
+                                <div style="position: relative">
+                                    <div class="oe_module_vignette">
+                                        <a t-if="!read_only_mode" type="delete" class="fa fa-times pull-right" />
+                                        <div class="o_kanban_image">
+                                            <img t-if="record.image.raw_value" t-att-src="'data:image/png;base64,'+record.image.raw_value" />
+                                        </div>
+                                        <div class="oe_module_desc">
+                                            <div class="oe_kanban_box_content oe_kanban_color_bglight oe_kanban_color_border">
+                                                <table class="oe_kanban_table">
+                                                    <tr>
+                                                        <td class="oe_kanban_title1" align="left" valign="middle">
+                                                            <h4>
+                                                                <a type="open">
+                                                                    <field name="name" />
+                                                                </a>
+                                                            </h4>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </t>
+                        </templates>
+                    </kanban>
+                    <form string="Varaint Image">
+                        <sheet>
+                            <group>
+                                <field name="image" widget="image" class="oe_avatar" />
+                            </group>
+                        </sheet>
+                    </form>
+                </field>
+            </xpath>
+        </field>
+    </record>
+</odoo>

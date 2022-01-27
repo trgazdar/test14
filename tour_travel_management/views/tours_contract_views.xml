@@ -1,0 +1,41 @@
+<odoo>
+	<record id="tours_contract_form" model="ir.ui.view">
+		<field name="name">tours.contract.form</field>
+		<field name="model">tours.contract</field>
+		<field name="arch" type="xml">
+			<form string="Tours Contract" create="0">
+				<sheet>
+					<group>
+						<field name="tour_id" required="1"/>
+						<field name="partner_id"/>
+						<field name="name" required="1"/>
+						<field name="tour_qty" required="1"/>
+						<field name="price_unit" required="1"/>
+						<field name="total_price"/>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<record id='tours_contract_tree' model='ir.ui.view'>
+		<field name='name'>tours.contract.tree</field>
+		<field name='model'>tours.contract</field>
+		<field name='arch' type='xml'>
+			<tree string='Tours Contract' create="0">
+				<field name="tour_id"/>
+				<field name="partner_id"/>
+				<field name="name"/>
+				<field name="tour_qty"/>
+				<field name="price_unit"/>
+				<field name="total_price"/>
+			</tree>
+		</field>
+	</record>
+
+	<record id="action_tours_contract" model="ir.actions.act_window">
+		<field name="name">Tours Contract</field>
+		<field name="res_model">tours.contract</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+</odoo>

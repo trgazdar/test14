@@ -1,0 +1,50 @@
+<odoo>
+	<record id="hotel_contract_form" model="ir.ui.view">
+		<field name="name">hotel.contract.form</field>
+		<field name="model">hotel.contract</field>
+		<field name="arch" type="xml">
+			<form string="Hotel Contract Form" create="0">
+				<sheet>
+					<group>
+						<group>
+							<field name="hotel_categ_id"/>
+							<field name="night_qty" required="1"/>
+							<field name="no_of_person"/>
+						</group>
+						<group>
+							<field name="hotel_id"/>
+							<field name="partner_id" required="1"/>
+							<field name="room_qty"/>
+							<field name="price_unit" required="1"/>
+							<field name="price_subtotal"/>
+						</group>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<record id='hotel_contract_tree' model='ir.ui.view'>
+		<field name='name'>hotel.contract.tree</field>
+		<field name='model'>hotel.contract</field>
+		<field name='arch' type='xml'>
+			<tree string='Hotel Contract Tree' create="0">
+				<field name="hotel_categ_id"/>
+				<field name="hotel_id"/>
+				<field name="partner_id"/>
+				<field name="night_qty"/>
+				<field name="room_qty"/>
+				<field name="no_of_person"/>
+				<field name="price_unit"/>
+				<field name="price_subtotal"/>
+			</tree>
+		</field>
+	</record>
+
+	<record id="action_hotel_contract" model="ir.actions.act_window">
+		<field name="name">Hotel Contract</field>
+		<field name="res_model">hotel.contract</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+</odoo>

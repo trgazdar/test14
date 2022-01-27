@@ -1,0 +1,50 @@
+<odoo>
+	<record id="ticketing_contract_form" model="ir.ui.view">
+		<field name="name">ticketing.contract.form</field>
+		<field name="model">ticketing.contract</field>
+		<field name="arch" type="xml">
+			<form string="Ticketing Contract">
+				<sheet>
+					<group>
+						<field name="product_id" required="1"/>
+						<field name="partner_id" required="1"/>
+						<field name="passanger_id" required="1"/>
+						<field name="ticket_type"/>
+						<field name="ticket_issue_date" required="1"/>
+						<field name="ticket_no" required="1"/>
+						<field name="gross_fare"/>
+						<field name="taxes_ids"/>
+						<field name="price_unit" required="1"/>
+						<field name="total_price"/>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<record id='ticketing_contract_tree' model='ir.ui.view'>
+		<field name='name'>ticketing.contract.tree</field>
+		<field name='model'>ticketing.contract</field>
+		<field name='arch' type='xml'>
+			<tree string='Ticketing Contract'>
+				<field name="product_id"/>
+				<field name="partner_id"/>
+				<field name="passanger_id"/>
+				<field name="ticket_type"/>
+				<field name="ticket_issue_date"/>
+				<field name="ticket_no"/>
+				<field name="gross_fare"/>
+				<field name="taxes_ids"/>
+				<field name="price_unit"/>
+				<field name="total_price"/>
+			</tree>
+		</field>
+	</record>
+
+	<record id="action_ticketing_contract" model="ir.actions.act_window">
+		<field name="name">Ticketing Contract</field>
+		<field name="res_model">ticketing.contract</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+</odoo>

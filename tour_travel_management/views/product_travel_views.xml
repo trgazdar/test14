@@ -1,0 +1,133 @@
+<odoo>
+
+    <record id="inherited_product_template_form" model="ir.ui.view">
+        <field name="name">inherited.product.template.form</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='options']/div[2]" position="after">
+                <group>
+                    <field name="type_travel_product"/>
+                </group>
+            </xpath>
+            <field name='type' position='before'>
+                <field name='vehicle_number' attrs="{'invisible':[('type_travel_product','!=','transportation')]}"/>
+            </field>
+            <xpath expr="//page[@name='sales']" position="after">
+                <page name="docs" string="Documents">
+                    <field name="visa_doc_ids">
+                        <tree editable="top">
+                            <field name="visa_docs_id" required="1"/>
+                        </tree>
+                    </field>
+                </page>
+                <page string="Hotel Details" name="hotel_details" attrs="{'invisible':[('type_travel_product','!=','hotel')]}">
+                    <group>
+                        <separator string="Hotel Address" colspan="4"/>
+                        <div class="o_address_format" width="50%">
+                            <field name="street" placeholder="Street..." class="o_address_street"/>
+                            <field name="street2" placeholder="Street 2..." class="o_address_street"/>
+                            <field name="city" placeholder="City" class="o_address_city" attrs="{'required':[('type_travel_product','=','hotel')]}"/>
+                            <field name="state_id" class="o_address_state" placeholder="State" options="{'no_open': True}"/>
+                            <field name="zip" placeholder="ZIP" class="o_address_zip"/>
+                            <field name="country_id" placeholder="Country" class="o_address_country" options="{'no_open': True,'no_create': True}"/>
+                        </div>
+                    </group>
+                    <group>
+                        <separator string="Other" colspan="4"/>
+                        <div width="50%">
+                            <group>
+                                <field name="rating" widget="priority"/>
+                            </group>
+                        </div>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Action: Action for hotel/ set default type_travel_product=hotel  -->
+    <record id="action_hotel_travel" model="ir.actions.act_window">
+        <field name="name">Hotel</field>
+        <field name="res_model">product.template</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('type_travel_product','=','hotel')]</field>
+        <field name="context">{'default_type_travel_product':'hotel'}</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Create a New Hotel  
+            </p>
+        </field>
+    </record>
+
+     <!-- Action: Action for hotel/ set default type_travel_product=transportation  -->
+    <record id="action_transportation_travel" model="ir.actions.act_window">
+        <field name="name">Transportation</field>
+        <field name="res_model">product.template</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('type_travel_product','=','transportation')]</field>
+        <field name="context">{'default_type_travel_product':'transportation'}</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Create a New Transportation  
+            </p>
+        </field>
+    </record>
+
+    <!-- Action: Action for Tickets/ set detault type_travel_product=tickets  -->
+    <record id="action_tickets_travel" model="ir.actions.act_window">
+        <field name="name">Tickets</field>
+        <field name="res_model">product.template</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('type_travel_product','=','tickets')]</field>
+        <field name="context">{'default_type_travel_product':'tickets'}</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Create a New Tickets     
+            </p>
+        </field>
+    </record>
+
+    <!-- Action: Action for Tour/ set detault type_travel_product=tour  -->
+    <record id="action_tour_travel" model="ir.actions.act_window">
+        <field name="name">Tour</field>
+        <field name="res_model">product.template</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('type_travel_product','=','tour')]</field>
+        <field name="context">{'default_type_travel_product':'tour'}</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Create a New Tour     
+            </p>
+        </field>
+    </record>
+
+    <!-- Action: Action for Meals/ set detault type_travel_product=tour  -->
+    <record id="action_meals_travel" model="ir.actions.act_window">
+        <field name="name">Meals</field>
+        <field name="res_model">product.template</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('type_travel_product','=','meals')]</field>
+        <field name="context">{'default_type_travel_product':'meals'}</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Create a New Meals     
+            </p>
+        </field>
+    </record>
+
+    <!-- Action: Action for Meals/ set detault type_travel_product=tour  -->
+    <record id="action_ticketing_travel" model="ir.actions.act_window">
+        <field name="name">Ticketing</field>
+        <field name="res_model">product.template</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('type_travel_product','=','ticketing')]</field>
+        <field name="context">{'default_type_travel_product':'ticketing'}</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Create a New Ticketing     
+            </p>
+        </field>
+    </record>
+
+</odoo>

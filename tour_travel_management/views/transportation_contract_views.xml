@@ -1,0 +1,46 @@
+<odoo>
+	<record id="transportation_contract_form" model="ir.ui.view">
+		<field name="name">transportation.contract.form</field>
+		<field name="model">transportation.contract</field>
+		<field name="arch" type="xml">
+			<form string="Transportation Contract" create="0">
+				<sheet>
+					<group>
+						<group>
+							<field name="vehicle_id" required="1"/>
+							<field name="partner_id"/>
+							<field name="tags_ids"/>
+							<field name="name"/>
+						</group>
+						<group>
+							<field name="duration_time"/>
+							<field name="price_unit" required="1"/>
+						</group>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<record id='transportation_contract_tree' model='ir.ui.view'>
+		<field name='name'>transportation.contract.tree</field>
+		<field name='model'>transportation.contract</field>
+		<field name='arch' type='xml'>
+			<tree string='Transportation Contract' create="0">
+				<field name="vehicle_id"/>
+				<field name="partner_id"/>
+				<field name="tags_ids"/>
+				<field name="name"/>
+				<field name="duration_time"/>
+				<field name="price_unit"/>
+			</tree>
+		</field>
+	</record>
+
+	<record id="action_transportation_contract" model="ir.actions.act_window">
+		<field name="name">Transportation Contract</field>
+		<field name="res_model">transportation.contract</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+</odoo>
