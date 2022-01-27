@@ -5,8 +5,8 @@
         <field name="model">control_guias</field>
         <field name="arch" type="xml">
           <tree string="Control de Guias" editable="bottom">
-              <field name="fecha_envio" invisible="1"/>
-              <field name="fecha_entrega" invisible="1" />
+              <field name="fecha_envio" />
+              <field name="fecha_entrega"  />
               <field name="destino" invisible="1"/>
               <field name="marca" invisible="1"/>
               <field name="modelo" invisible="1"/>
