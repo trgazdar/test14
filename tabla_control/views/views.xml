@@ -19,11 +19,11 @@
               <field name="servintes" />
               <field name="cliente_final_id" />
               <field name="valor" required="1"/>
-              <field name="estado" required="1"/>
+              <field name="estado" required="1" decoration-success="estado=='Pagado'" decoration-danger="estado=='No Pagado'"/>
+              
           </tree>
         </field>
     </record>
-
 
 
 
