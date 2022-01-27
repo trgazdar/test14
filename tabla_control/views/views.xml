@@ -5,20 +5,20 @@
         <field name="model">control_guias</field>
         <field name="arch" type="xml">
           <tree string="Control de Guias" editable="bottom">
-              <field name="fecha_envio" />
-              <field name="fecha_entrega"  />
-              <field name="destino" invisible="1"/>
-              <field name="marca" invisible="1"/>
-              <field name="modelo" invisible="1"/>
-              <field name="color" invisible="1"/>
-              <field name="destinatario_id" invisible="1"/>
-              <field name="cod_ciguena" invisible="1"/>
-              <field name="remitente" invisible="1"/>
-              <field name="num_chasis" invisible="1"/>
-              <field name="pikango" invisible="1"/>
-              <field name="servintes" invisible="1"/>
-              <field name="cliente_final_id" invisible="1"/>
-              <field name="valor" invisible="1"/>
+              <field name="fecha_envio" required="1"/>
+              <field name="fecha_entrega" required="1" />
+              <field name="destino" required="1"/>
+              <field name="marca" required="1"/>
+              <field name="modelo" required="1"/>
+              <field name="color" required="1"/>
+              <field name="destinatario_id" required="1"/>
+              <field name="cod_ciguena" required="1"/>
+              <field name="remitente" required="1"/>
+              <field name="num_chasis" required="1"/>
+              <field name="pikango" />
+              <field name="servintes" />
+              <field name="cliente_final_id" />
+              <field name="valor" required="1"/>
           </tree>
         </field>
     </record>
