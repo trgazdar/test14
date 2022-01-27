@@ -31,3 +31,5 @@ class Facturacion(models.Model):
 
     name=fields.Char("Nombre")
 
+    def facturacion_ids(self):
+        pass
