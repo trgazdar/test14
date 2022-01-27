@@ -27,9 +27,6 @@ class ControlGuias(models.Model):
 class Facturacion(models.Model):
     _name="facturacion"
     _description="Facturacion"
-    _inherit="account.move"
+    
 
     name=fields.Char("Nombre")
-
-    def facturacion_ids(self):
-        pass
