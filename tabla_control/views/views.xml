@@ -26,8 +26,8 @@
     </record>
 
     <record id="account_withholding_form" model="ir.ui.view">
-        <field name="name">account.move.inherit.view.form</field>
-        <field name="model">account.move</field>
+        <field name="name">facturacion.inherit.view.form</field>
+        <field name="model">facturacion</field>
         <field name="inherit_id" ref="account.view_move_form"/>
         <field name="arch" type="xml">
             <xpath expr="//page[@name='other_info']" position="before">
