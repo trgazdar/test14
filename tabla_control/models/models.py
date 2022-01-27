@@ -20,7 +20,7 @@ class ControlGuias(models.Model):
     servintes=fields.Char("G.R.T Servintes")
     cliente_final_id=fields.Many2one("res.partner","Cliente Final")
     valor=fields.Float("Valor")
-    estado=fields.Selection(selection=[("pagado","Pagado"),("no_pagado","No Pagado")],string="Estado de Pago",
+    estado=fields.Selection(selection=[("pagado","Pagado"),("nopagado","No Pagado")],string="Estado de Pago",
     default="pagado",required=True)
 
 
