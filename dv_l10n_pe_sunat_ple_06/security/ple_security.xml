@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.rule" id="ple_6">
+            <field name="name">ple 6 multi-company</field>
+            <field name="model_id" search="[('model','=','ple.report.06')]" model="ir.model"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+    </data>
+</odoo>

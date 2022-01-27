@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="res_currency_rate_wizard_form" model="ir.ui.view">
+        <field name="name">res.currency.rate.wizard.form</field>
+        <field name="model">res.currency.rate.wizard</field>
+        <field name="priority" eval="8"/>
+        <field name="arch" type="xml">
+            <form string="Tipo de cambio">
+                <group>
+                    <field name="company_id"/>
+                    <field name="rate"/>
+                    <field name="date"/>
+                    <field name="currency_id"/>
+                </group>
+                <footer>
+                    <button name="create_currency_rate" string="Crear" type="object"/>
+                    <button name="cancel" string="Cancelar" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <!-- res.currency.rate action window -->
+    <record id="res_currency_rate_wizard_action_action" model="ir.actions.act_window">
+        <field name="name">Tipo de cambio a la fecha</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.currency.rate.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="res_currency_rate_wizard_form"/>
+        <field name="target">new</field>
+    </record>
+</odoo>

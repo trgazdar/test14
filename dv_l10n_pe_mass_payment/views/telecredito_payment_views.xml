@@ -1,0 +1,85 @@
+<odoo>
+    <record id="telecredito_payment_view_form" model="ir.ui.view">
+        <field name="name">telecredito.payment.view.form</field>
+        <field name="model">telecredito.payment</field>
+        <field name="arch" type="xml">
+            <form string="Reporte de ventas">
+                <header>
+                    <button name="get_invoice_payment_ids" type="object" string="Obtener facturas por pagar" attrs="{'invisible': [('payment_state', '!=', 'not_paid')]}"/>
+                    <button name="generate_telecredito_xls_file" type="object" string="Generar reporte" attrs="{'invisible': [('payment_state', '!=', 'not_paid')]}"/>
+                    <button name="action_register_payment" type="object" class="oe_highlight" string="Registrar pago" attrs="{'invisible': [('payment_state', '!=', 'not_paid')]}"/>
+                    <field name="payment_state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="company_id"/>
+                            <field name="start_date"/>
+                            <field name="finish_date"/>
+                            <field name="invoice_high_priority"/>
+                            <field name="invoice_medium_priority"/>
+                            <field name="invoice_low_priority"/>
+                        </group>
+                        <group>
+                            <field name="telecredito_xls_filename" invisible="1"/>
+                            <field name="telecredito_xls_file" filename="telecredito_xls_filename" readonly="1"/>
+                            <field name="telecredito_txt_filename" invisible="1"/>
+                            <field name="telecredito_txt_file" filename="telecredito_txt_filename" readonly="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="invoices_to_pay" string="Comprobantes">
+                            <field name="invoice_payment_ids" attrs="{'readonly': [('payment_state', '!=', 'not_paid')]}">
+                                <tree editable="bottom">
+                                    <field name="l10n_pe_partner_vat"/>
+                                    <field name="partner_id"/>
+                                    <field name="state" invisible="1"/>
+                                    <field name="l10n_latam_document_type_id" readonly="1"/>
+                                    <field name="l10n_latam_document_number"/>
+                                    <field name="invoice_date"/>
+                                    <field name="company_id" invisible="1"/>
+                                    <field name="invoice_payment_term_id" optional="hide"/>
+                                    <field name="invoice_date_due"/>
+                                    <field name="invoice_date_due" widget="remaining_days" optional="hide"/>
+                                    <field name="currency_id"/>
+                                    <field name="amount_total_signed" string="Total" sum="Total" decoration-bf="1" optional="hide"/>
+                                    <field name="amount_residual_signed" string="Saldo" sum="Amount Due" optional="show"/>
+                                    <field name="payment_priority"  widget="badge"
+                                            decoration-info="payment_priority == 'low'"
+                                            decoration-warning="payment_priority == 'medium'"
+                                            decoration-danger="payment_priority == 'high'"/>
+                                    <field name="payment_planned_date"/>
+                                    <button name="open_record" type="object" string="Ver factura"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="telecredito_payment_view_tree" model="ir.ui.view">
+        <field name="name">telecredito.payment.view.tree</field>
+        <field name="model">telecredito.payment</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="start_date" />
+                <field name="finish_date" />
+                <field name="telecredito_xls_filename" invisible="1"/>
+                <field name="telecredito_xls_file" filename="telecredito_xls_filename" readonly="1"/>
+                <field name="company_id" />
+            </tree>
+        </field>
+    </record>
+    <record id="telecredito_payment_action" model="ir.actions.act_window">
+        <field name="name">Facturas por pagar</field>
+        <field name="res_model">telecredito.payment</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

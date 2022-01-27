@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_ple_report_13_tree" model="ir.ui.view">
+            <field name="name">ple.report.13.tree</field>
+            <field name="model">ple.report.13</field>
+            <field name="inherit_id" ref="dv_l10n_pe_sunat_ple_base.view_ple_report_templ_tree"/>
+            <field name="mode">primary</field>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//field[@name='month']" position="attributes">
+                        <attribute name="invisible"/>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+        <record id="view_ple_report_13_form" model="ir.ui.view">
+            <field name="name">ple.report.13.form</field>
+            <field name="model">ple.report.13</field>
+            <field name="inherit_id" ref="dv_l10n_pe_sunat_ple_base.view_ple_report_templ_form"/>
+            <field name="mode">primary</field>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//field[@name='month']" position="attributes">
+                        <attribute name="invisible"/>
+                    </xpath>
+                    <xpath expr="//notebook" position="inside">
+                        <page name="report_13_lines" string="Entregas">
+                            <field name="line_ids" nolabel="1"/>
+                        </page>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+        <record id="view_ple_report_13_search" model="ir.ui.view">
+            <field name="name">ple.report.13.search</field>
+            <field name="model">ple.report.13</field>
+            <field name="inherit_id" ref="dv_l10n_pe_sunat_ple_base.view_ple_report_templ_search"/>
+            <field name="mode">primary</field>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//filter[@name='group_by_date_year']" position="attributes">
+                        <attribute name="invisible"/>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+        <record id="action_ple_report_13" model="ir.actions.act_window">
+            <field name="name">Registro de Inventario Permanente Valorizado</field>
+            <field name="res_model">ple.report.13</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{'search_default_group_by_date_year': 1}</field>
+        </record>
+        <menuitem name="Estructura 13 - Registro de Inventario Permanente Valorizado"
+            id="menu_action_ple_report_13"
+            parent="dv_l10n_pe_sunat_ple_base.menu_ple_report"
+            action="action_ple_report_13"
+            sequence="13"/>
+    </data>
+</odoo>

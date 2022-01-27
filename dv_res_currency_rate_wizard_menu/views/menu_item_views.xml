@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="res_currency_rate_wizard_menu_categ" name="Tipo de cambio" action="res_currency_rate_wizard_action_action" parent="account.menu_finance_entries_accounting_miscellaneous" sequence="90" />
+</odoo>

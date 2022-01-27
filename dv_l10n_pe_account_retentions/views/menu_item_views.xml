@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem name="Tabla de retenciones" id="withholding_table_menu" parent="account.menu_finance_configuration"  action="withholding_tax_table_action"/>
+</odoo>

@@ -1,0 +1,15 @@
+<odoo>
+    <data>
+        <!--        Menu Principal      -->
+        <menuitem name="Pagos Masivos" id="masive_payment_menu_root" groups="account.group_account_user,account.group_account_manager" web_icon="dv_l10n_pe_mass_payment,static/description/icon.png"/>
+        <menuitem id="telecredito_payments_report_menu_categ" name="Reportes Pagos" parent="masive_payment_menu_root" sequence="1"/>
+        <menuitem id="telecredito_payment_menu" name="Reporte Telecredito" action="telecredito_payment_action" parent="telecredito_payments_report_menu_categ" sequence="1" />
+        <!--         Prioridad de pago      -->
+        <menuitem id="payment_priority_selection_menu_categ" name="Prioridad de pago" parent="masive_payment_menu_root" action="invoice_payment_priority_action" sequence="3"/>
+        <!--           Cuentas Bancarias      -->
+        <menuitem id="bank_menu_categ" name="Cuentas Bancarias" parent="masive_payment_menu_root" sequence="7"/>
+        <menuitem id="supplier_partner_menu" name="Proveedores" action="account.res_partner_action_supplier" parent="bank_menu_categ" sequence="1" />
+        <menuitem id="supplier_bank_menu" name="Cuentas Bancarias" action="supplier_bank_action" parent="bank_menu_categ" sequence="2" />
+        <menuitem id="bank_menu" name="Bancos" action="base.action_res_bank_form" parent="bank_menu_categ" sequence="3" />
+    </data>
+</odoo>
