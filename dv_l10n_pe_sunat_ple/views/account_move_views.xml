@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_id" model="ir.ui.view">
+        <field name="name">account.move.inherit.view.form</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='other_info']" position="after">
+                <page string="PLE" name="ple" attrs="{'invisible': [('move_type', 'in', ('entry'))]}">
+                    <group attrs="{'invisible': [('move_type', 'not in', ('in_invoice', 'in_refund', 'in_receipt'))]}">
+                        <field name="l10n_pe_adquisition_type"/>
+                    </group>
+                    <group string="Proyecto" attrs="{'invisible': [('move_type', 'not in', ('in_invoice', 'in_refund', 'in_receipt'))]}">
+                        <field name="l10n_pe_project_identification"/>
+                        <field name="l10n_pe_is_subject_to_withholding"/>
+                    </group>
+                    <group string="Errores">
+                        <field name="l10n_pe_error_type_1" attrs="{'invisible': [('move_type', 'in', ('entry'))]}"/>
+                        <field name="l10n_pe_error_type_2" attrs="{'invisible': [('move_type', 'not in', ('in_invoice', 'in_refund', 'in_receipt'))]}"/>
+                        <field name="l10n_pe_error_type_3" attrs="{'invisible': [('move_type', 'not in', ('in_invoice', 'in_refund', 'in_receipt'))]}"/>
+                        <field name="l10n_pe_error_type_4" attrs="{'invisible': [('move_type', 'not in', ('in_invoice', 'in_refund', 'in_receipt'))]}"/>
+                    </group>
+                    <group>
+                        <field name="l10n_pe_in_annotation_opportunity_status" attrs="{'invisible': [('move_type', 'not in', ('in_invoice', 'in_refund', 'in_receipt'))]}"/>
+                        <field name="l10n_pe_out_annotation_opportunity_status" attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund', 'out_receipt'))]}"/>
+                    </group>
+                </page>
+                <page string="PLE No domiciliado" name="ple_no_domic" attrs="{'invisible': [('move_type', 'not in', ('in_invoice', 'in_refund', 'in_receipt'))]}">
+                    <group string='Datos del proveedor'>
+                        <field name="l10n_pe_partner_vat"/>
+                        <field name="l10n_pe_partner_name"/>
+                        <field name="l10n_pe_partner_country_name"/>
+                        <field name="l10n_pe_partner_street"/>
+                    </group>
+                    <group string='Impuestos'>
+                        <field name="l10n_pe_non_domic_igv_withholding_amount"/>
+                        <field name="l10n_pe_non_domic_disposal_capital_assets_cost"/>
+                        <field name="l10n_pe_non_domic_brute_rent_amount"/>
+                        <field name="l10n_pe_non_domic_rent_type_id"/>
+                        <field name="l10n_pe_non_domic_net_rent_amount"/>
+                        <field name="l10n_pe_non_domic_withholding_rate"/>
+                        <field name="l10n_pe_non_domic_withheld_tax"/>
+                        <field name="l10n_pe_non_domic_agreement_id"/>
+                        <field name="l10n_pe_non_domic_vinculation_id"/>
+                        <field name="l10n_pe_non_domic_applied_exemption_id"/>
+                        <field name="l10n_pe_non_domic_service_type_id"/>
+
+                    </group>
+                    <group string='Comprobante de sustento'>
+    
+                        <field name="l10n_pe_non_domic_sustent_document_type_id"/>
+                        <field name="l10n_pe_non_domic_sustent_serie"/>
+                        <field name="l10n_pe_non_domic_sustent_number"/>
+                        <field name="l10n_pe_non_domic_sustent_dua_emission_year"/>
+                    </group>
+                    <group string='Otros'>
+                        <field name="l10n_pe_non_domic_is_tax_rent_applied"/>
+                        <field name="l10n_pe_non_domic_tax_rent_code"/>
+                        <field name="l10n_pe_no_domic_annotation_opportunity_status"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

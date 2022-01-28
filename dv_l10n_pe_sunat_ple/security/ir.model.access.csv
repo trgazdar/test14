@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_ple_report,access_ple_report,model_ple_report,base.group_user,1,0,0,0
+access_ple_report_sale,access_ple_report_sale,model_ple_report_sale,,1,1,1,1
+access_ple_report_purchase,access_ple_report_purchase,model_ple_report_purchase,,1,1,1,1

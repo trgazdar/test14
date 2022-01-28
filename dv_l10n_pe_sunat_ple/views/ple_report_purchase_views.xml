@@ -1,0 +1,83 @@
+<odoo>
+    <record id="ple_slae_view_form" model="ir.ui.view">
+        <field name="name">ple.report.purchase.view.form</field>
+        <field name="model">ple.report.purchase</field>
+        <field name="arch" type="xml">
+            <form string="Reporte de ventas">
+                <header>
+                    <button name="generate_ple_txt_files" type="object" string="Generar reportes TXT" attrs="{'invisible': [('report_state', '=', 'declarated')]}"/>
+                    <button name="generate_ple_xls_files" type="object" string="Generar reportes XLS" attrs="{'invisible': [('report_state', '=', 'declarated')]}"/>
+                    <button name="action_declare" type="object" string="Marcar como declarado" class="btn-primary" attrs="{'invisible': [('report_state', '!=', 'created')]}"/>
+                    <button name="action_draft" type="object" string="Marcar como borrador" class="btn-secondary" attrs="{'invisible': [('report_state', '=', 'draft')]}"/>
+                    <field name="report_state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="company_id" attrs="{'readonly': [('report_state', '!=', 'draft')]}"/>
+                            <field name="start_date" attrs="{'readonly': [('report_state', '!=', 'draft')]}"/>
+                            <field name="finish_date" attrs="{'readonly': [('report_state', '!=', 'draft')]}"/>
+                            <field name="emission_state" attrs="{'readonly': [('report_state', '!=', 'draft')]}"/>
+                        </group>
+                        <group>
+                            <div class="oe_title">
+                                <h2>
+                                    Formatos TXT
+                                </h2>
+                            </div>
+                            <field name="ple_8_1_txt_filename" invisible="1"/>
+                            <field name="ple_8_1_txt_file" filename="ple_8_1_txt_filename" readonly="1"/>
+                            <field name="ple_8_2_txt_filename" invisible="1"/>
+                            <field name="ple_8_2_txt_file" filename="ple_8_2_txt_filename" readonly="1"/>
+                            <field name="ple_8_3_txt_filename" invisible="1"/>
+                            <field name="ple_8_3_txt_file" filename="ple_8_3_txt_filename" readonly="1"/>
+                            <field name="txt_creation_datetime"/>
+                            <div class="oe_title">
+                                <h2>
+                                    Formatos XLS
+                                </h2>
+                            </div>
+                            <field name="ple_8_1_xls_filename" invisible="1"/>
+                            <field name="ple_8_1_xls_file" filename="ple_8_1_xls_filename" readonly="1"/>
+                            <field name="ple_8_2_xls_filename" invisible="1"/>
+                            <field name="ple_8_2_xls_file" filename="ple_8_2_xls_filename" readonly="1"/>
+                            <field name="ple_8_3_xls_filename" invisible="1"/>
+                            <field name="ple_8_3_xls_file" filename="ple_8_3_xls_filename" readonly="1"/>
+                            <field name="xls_creation_datetime"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Comprobantes" name="purchase_account_move">
+                            <field name="period_invoice_ids"/>
+                        </page>
+                        <page string="Comprobantes no domiciliados" name="purchase_non_domic">
+                            <field name="period_invoice_non_domic_ids"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="ple_report_purchase_view_tree" model="ir.ui.view">
+        <field name="name">ple.report.purchase.view.tree</field>
+        <field name="model">ple.report.purchase</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="ple_8_3_xls_filename" invisible="1"/>
+                <field name="ple_8_3_xls_file" filename="ple_txt_filename" readonly="1"/>
+                <field name="company_id" />
+            </tree>
+        </field>
+    </record>
+    <record id="ple_report_purchase_action" model="ir.actions.act_window">
+        <field name="name">Registro de compras</field>
+        <field name="res_model">ple.report.purchase</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>
