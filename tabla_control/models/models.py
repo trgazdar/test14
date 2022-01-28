@@ -27,6 +27,6 @@ class ControlGuias(models.Model):
 class Facturacion(models.Model):
     _name="facturacion"
     _description="Facturacion"
+    
 
     name=fields.Char("Nombre")
-
