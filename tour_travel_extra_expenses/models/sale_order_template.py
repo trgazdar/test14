@@ -131,7 +131,7 @@ class SaleOrderTemplete(models.Model):
         for supplier in supplier_ids:
             extra_ticket_packages = []
             for line in extra_ticket_line_ids:
-                if line.supplier.id == supplier.id:
+                if line.supplier_id.id == supplier.id:
                     extra_ticket_packages.append((0,0,{
                         'product_id': line.ticket_id.id,
                         'product_qty': line.qty,
