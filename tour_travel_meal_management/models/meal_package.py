@@ -50,5 +50,6 @@ class MealPackageLine(models.Model):
     @api.onchange('meal_package_id')
     def _onchange_meal_package_id(self):
         if self.meal_package_id:
-            self.update({'unit_price': self._get_price_with_commission(self.meal_package_id.standard_price),
-                         'cost_price': self.meal_package_id.standard_price})
+            self.update({#'unit_price': self._get_price_with_commission(self.meal_package_id.standard_price),
+                         'unit_price': self.meal_package_id.product_id.standard_price,
+                         'cost_price': self.meal_package_id.product_id.standard_price})
