@@ -27,7 +27,7 @@ class TourRegistration(models.Model):
             if rec.amount_untaxed != 0 and rec.group_costing_id:
                 discount_amount = (rec.group_costing_id.sales_price - rec.amount_untaxed)
                 if discount_amount:
-                    product = self.env['res.config.settings'].search([]).product_discount_id
+                    product = self.env['res.config.settings'].sudo().search([]).product_discount_id
                     if not product:
                         product = self.env.ref('tour_travel_management.package_discount')
                     lina_data = {'order_id' : rec.id,
