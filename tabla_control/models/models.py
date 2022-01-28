@@ -1,4 +1,4 @@
-from odoo import fields, models
+from odoo import fields, models, api
 
 
 class ControlGuias(models.Model):
@@ -25,8 +25,26 @@ class ControlGuias(models.Model):
 
 
 class Facturacion(models.Model):
-    _name="facturacion"
-    _description="Facturacion"
+    _inherit="account.move"
     
+    fecha_inicial=fields.Date("Fecha inicial")
+    fecha_final=fields.Date("Fecha final")
+    guias_control_ids=fields.Many2Many("control_guias","Guias")
 
-    name=fields.Char("Nombre")
+    @api.onchange('fecha_incial','fecha_final','partner_id')
+    def _onchange_guias_control_ids(self):
+
+        if self.partner_id and self.fecha_final and self.fecha_inicial:
+
+            busqueda_guia=self.env['control_guias'].search(
+                [('cliente_id','=',self.partner_id.id)]
+            )
+
+            self.guias_control_ids=busqueda_guia
+
+
+
+
+
+
+
