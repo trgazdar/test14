@@ -42,9 +42,9 @@ class SaleOrderTemplete(models.Model):
             for line in ticket_line_ids:
                 if line.supplier_id.id == supplier.id:
                     ticket_packages.append((0,0,{
-                        'product_id': line.ticket_id.id,
+                        'product_id': line.product_id.id,
                         'product_qty': line.qty,
-                        'price_unit': line.ticket_id.standard_price,
+                        'price_unit': line.product_id.standard_price,
                     }))
             purchase_order = {
                 'partner_id': supplier.id,
