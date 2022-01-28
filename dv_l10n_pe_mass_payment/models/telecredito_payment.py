@@ -70,8 +70,8 @@ class BCPMassPayment(models.Model):
             ('payment_priority', 'in', priorities),
             ('move_type', '=', 'in_invoice'),
             ('payment_state', '=', 'not_paid'),
-            ('invoice_date', '>', self.start_date),
-            ('invoice_date', '<', self.finish_date)
+            ('invoice_date', '>=', self.start_date),
+            ('invoice_date', '<=', self.finish_date)
         ], order='id asc')
         # IDEA DE NOTAS DE CREDITO
         invoice_reversed_ids = self.env['account.move'].search([
