@@ -94,7 +94,7 @@ class PackageContract(models.Model):
         Method for not to delete contract in running state.
         """
         for contract in self:
-            if contract.state in ['open','close', 'cancel']:
+            if contract.state in ['open']: #'close', 'cancel'
                 raise ValidationError(
                     _("You can delete only new contracts."))
         return super(PackageContract,self).unlink()
