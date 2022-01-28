@@ -47,7 +47,7 @@ class BCPMassPayment(models.Model):
                 payment_state = 'paid'
             else:
                 # Otro caso
-                payment_state = False
+                payment_state = 'not_paid'
             record.payment_state = payment_state
 
     # Función que trae las facturas de ventas del periodo indicado
