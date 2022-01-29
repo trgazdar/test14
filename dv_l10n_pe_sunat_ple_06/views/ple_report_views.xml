@@ -4,7 +4,7 @@
         <record id="view_ple_report_06_tree" model="ir.ui.view">
             <field name="name">ple.report.06.tree</field>
             <field name="model">ple.report.06</field>
-            <field name="inherit_id" ref="dv_l10n_pe_sunat_ple_base.view_ple_report_templ_tree"/>
+            <field name="inherit_id" ref="dv_l10n_pe_sunat_ple.view_ple_report_templ_tree"/>
             <field name="mode">primary</field>
             <field name="arch" type="xml">
                 <data>
@@ -17,7 +17,7 @@
         <record id="view_ple_report_06_form" model="ir.ui.view">
             <field name="name">ple.report.06.form</field>
             <field name="model">ple.report.06</field>
-            <field name="inherit_id" ref="dv_l10n_pe_sunat_ple_base.view_ple_report_templ_form"/>
+            <field name="inherit_id" ref="dv_l10n_pe_sunat_ple.view_ple_report_templ_form"/>
             <field name="mode">primary</field>
             <field name="arch" type="xml">
                 <data>
@@ -35,7 +35,7 @@
         <record id="view_ple_report_06_search" model="ir.ui.view">
             <field name="name">ple.report.06.search</field>
             <field name="model">ple.report.06</field>
-            <field name="inherit_id" ref="dv_l10n_pe_sunat_ple_base.view_ple_report_templ_search"/>
+            <field name="inherit_id" ref="dv_l10n_pe_sunat_ple.view_ple_report_templ_search"/>
             <field name="mode">primary</field>
             <field name="arch" type="xml">
                 <data>
@@ -52,9 +52,9 @@
             <field name="domain">[]</field>
             <field name="context">{'search_default_group_by_date_year': 1}</field>
         </record>
-        <menuitem name="Estructura 06 - Libro Mayor"
+        <menuitem name="06 - Libro Mayor"
             id="menu_action_ple_report_06"
-            parent="dv_l10n_pe_sunat_ple_base.menu_ple_report"
+            parent="dv_l10n_pe_sunat_ple.ple_history_menu_categ"
             action="action_ple_report_06"
             sequence="6"/>
     </data>

@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="view_ple_report_templ_tree" model="ir.ui.view">
+        <field name="name">ple.report.templ.tree</field>
+        <field name="model">ple.report.templ</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="year" options="{'type':'number', 'step':1}"/>
+                <field name="month" invisible="1"/>
+                <field name="day" options="{'type':'number', 'step':1}" invisible="1"/>
+                <field name="date" invisible="1"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+                <button name="update_report" string="Actualizar Datos" type="object" class="oe_highlight"/>
+            </tree>
+        </field>
+    </record>
+    <record id="view_ple_report_templ_form" model="ir.ui.view">
+        <field name="name">ple.report.templ.form</field>
+        <field name="model">ple.report.templ</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="update_report" string="Actualizar Datos" type="object"/>
+                    <button name="generate_report" string="Generar Estructuras" type="object" class="oe_highlight"/>
+                </header>
+                <sheet>
+                    <div name="button_box" class="oe_button_box"/>
+                    <group name="data_file_groups">
+                        <group name="data_group">
+                            <field name="name"/>
+                            <label for="year" name="year"/>
+                            <div class="o_row" name="year">
+                                <field name="year" class="oe_edit_only" options="{'type':'number', 'step':1}"/>
+                                <field name="year_char" class="oe_read_only"/>
+                            </div>
+                            <field name="month" invisible="1"/>
+                            <field name="day" options="{'type':'number', 'step':1}" invisible="1"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                        <group name="file_group">
+                            <field name="date_generated" attrs="{'invisible': [('date_generated','=',False)]}"/>
+                            <field name="ple_txt_01_filename" invisible="1"/>
+                            <field name="ple_txt_01_binary" filename="ple_txt_01_filename" attrs="{'invisible': [('ple_txt_01_binary','=',False)]}"/>
+                            <field name="ple_xls_01_filename" invisible="1"/>
+                            <field name="ple_xls_01_binary" filename="ple_xls_01_filename" attrs="{'invisible': [('ple_xls_01_binary','=',False)]}"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="ple_txt_01" invisible="1">
+                            <group name="ple_txt_01">
+                                <field name="ple_txt_01"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_ple_report_templ_search">
+        <field name="name">ple.report.templ.search</field>
+        <field name="model">ple.report.templ</field>
+        <field name="type">search</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="company_id"/>
+                <group expand="0" string="Group By">
+                    <filter name="group_by_date_year" string="Fecha" domain="[]" context="{'group_by':'date:year'}" invisible="1"/>
+                    <filter name="group_by_date_month" string="Fecha" domain="[]" context="{'group_by':'date:month'}" invisible="1"/>
+                    <filter name="group_by_date_day" string="Fecha" domain="[]" context="{'group_by':'date:day'}" invisible="1"/>
+                </group>
+            </search>
+        </field>
+    </record>
+</odoo>

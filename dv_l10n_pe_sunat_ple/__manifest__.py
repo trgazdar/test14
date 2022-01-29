@@ -39,6 +39,7 @@
 
     'data': [
         'views/account_move_views.xml',
+        'views/ple_report_views.xml',
         'views/ple_report_sale_views.xml',
         'views/ple_report_purchase_views.xml',
         'views/menu_item_views.xml',
