@@ -128,6 +128,15 @@
                 </data>
             </field>
         </record>
+
+        <record id="action_ple_report_01" model="ir.actions.act_window">
+            <field name="name">Libro Caja y Bancos</field>
+            <field name="res_model">ple.report.01</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{'search_default_group_by_date_year': 1}</field>
+        </record>
+        
         <menuitem name="Estructura 01 - Libro Caja y Bancos"
             id="menu_action_ple_report_01"
             parent="dv_l10n_pe_sunat_ple.ple_history_menu_categ"
