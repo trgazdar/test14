@@ -29,12 +29,12 @@
     'live_test_url': 'https://demo.develogers.com',
     'license': 'LGPL-3',
 
-    'price': 119.99,
+    'price': 149.99,
     'currency': 'EUR',
 	
 	'depends': [
      	'base',
-		'dv_l10n_pe_sunat_ple_base',
+		'dv_l10n_pe_sunat_ple',
 	],
 	'data': [
      	'security/ple_security.xml',
