@@ -54,7 +54,7 @@
         </record>
         <menuitem name="13 - Registro de Inventario Permanente Valorizado"
             id="menu_action_ple_report_13"
-            parent="dv_l10n_pe_sunat_ple.menu_ple_report"
+            parent="dv_l10n_pe_sunat_ple.ple_history_menu_categ"
             action="action_ple_report_13"
             sequence="13"/>
     </data>
