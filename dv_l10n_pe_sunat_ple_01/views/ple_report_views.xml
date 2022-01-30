@@ -137,7 +137,7 @@
             <field name="context">{'search_default_group_by_date_year': 1}</field>
         </record>
         
-        <menuitem name="Estructura 01 - Libro Caja y Bancos"
+        <menuitem name="01 - Libro Caja y Bancos"
             id="menu_action_ple_report_01"
             parent="dv_l10n_pe_sunat_ple.ple_history_menu_categ"
             action="action_ple_report_01"
