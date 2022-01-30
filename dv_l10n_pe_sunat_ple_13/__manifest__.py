@@ -26,10 +26,10 @@
 	
 	'depends': [
      	'base',
-		'dv_l10n_pe_sunat_ple_base',
+		'dv_l10n_pe_sunat_ple',
 	],
 	'data': [
-     	'security/ple_security.xml',
+     	'security/ple_report_security.xml',
 		'security/ir.model.access.csv',
 		'views/ple_report_views.xml',
 	],
