@@ -31,7 +31,7 @@
 	
 	'depends': [
      	'base',
-		'dv_l10n_pe_sunat_ple_base',
+		'dv_l10n_pe_sunat_ple',
 	],
 	'data': [
      	'security/ple_report_security.xml',
