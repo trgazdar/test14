@@ -94,6 +94,7 @@ class PLEReportTempl(models.Model):
     ple_txt_01_filename = fields.Char(string='Nombre del TXT')
     ple_xls_01_binary = fields.Binary(string='Excel', readonly=True)
     ple_xls_01_filename = fields.Char(string='Nombre del Excel')
+    name = fields.Char(string='Nombre', required=True)
     year = fields.Integer(
         string='Año', default=lambda self: self._get_default_year())
     year_char = fields.Char(string='Año (texto)', compute='_compute_year_char')
