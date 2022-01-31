@@ -29,7 +29,7 @@ class Facturacion(models.Model):
     
     fecha_inicial=fields.Date("Fecha inicial")
     fecha_final=fields.Date("Fecha final")
-    guias_control_ids=fields.Many2Many("control_guias","Guias")
+    guias_control_ids=fields.Many2many("control_guias","Guias")
 
     @api.onchange('fecha_incial','fecha_final','partner_id')
     def _onchange_guias_control_ids(self):
