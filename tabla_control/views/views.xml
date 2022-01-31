@@ -1,84 +1,63 @@
 <odoo>
-    
     <record model="ir.ui.view" id="view_tree_tabla_control">
         <field name="name">tabla_control.view.tree</field>
         <field name="model">control_guias</field>
         <field name="arch" type="xml">
-          <tree string="Control de Guias" editable="bottom">
-              <field name="fecha_envio" required="1"/>
-              <field name="fecha_entrega" required="1" />
-              <field name="destino" required="1"/>
-              <field name="marca" required="1"/>
-              <field name="modelo" required="1"/>
-              <field name="color" required="1"/>
-              <field name="destinatario_id" required="1"/>
-              <field name="cod_ciguena" required="1"/>
-              <field name="remitente" required="1"/>
-              <field name="num_chasis" required="1"/>
-              <field name="pikango" />
-              <field name="servintes" />
-              <field name="cliente_final_id" />
-              <field name="valor" required="1"/>
-              <field name="estado" required="1" decoration-success="estado=='pagado'" decoration-danger="estado=='nopagado'"/>
-              
-          </tree>
+            <tree string="Control de Guias" editable="bottom">
+                <field name="fecha_envio" required="1"/>
+                <field name="fecha_entrega" required="1" />
+                <field name="destino" required="1"/>
+                <field name="marca" required="1"/>
+                <field name="modelo" required="1"/>
+                <field name="color" required="1"/>
+                <field name="destinatario_id" required="1"/>
+                <field name="cod_ciguena" required="1"/>
+                <field name="remitente" required="1"/>
+                <field name="num_chasis" required="1"/>
+                <field name="pikango" />
+                <field name="servintes" />
+                <field name="cliente_final_id" />
+                <field name="valor" required="1"/>
+                <field name="estado" required="1" decoration-success="estado=='pagado'" decoration-danger="estado=='nopagado'"/>
+            </tree>
         </field>
     </record>
-
-
     <record id="account_withholding_form" model="ir.ui.view">
         <field name="name">account.move.inherit.view.form</field>
         <field name="model">account.move</field>
         <field name="inherit_id" ref="account.view_move_form"/>
         <field name="arch" type="xml">
-        <xpath expr="//field[@name='payment_reference']" position="after">
-            <!-- Add your fields here -->
-            <field name="fecha_inicial"/>
-            <field name="fecha_final"/>
-        </xpath>
+            <xpath expr="//field[@name='payment_reference']" position="after">
+                <!-- Add your fields here -->
+                <field name="fecha_inicial"/>
+                <field name="fecha_final"/>
+            </xpath>
             <xpath expr="//page[@name='other_info']" position="before">
                 <page string="Guias" name="guias" >
-                    
-                        <field name="guias_control_ids"/>
-                   
+                    <field name="guias_control_ids"/>
                 </page>
             </xpath>
         </field>
     </record>
-
-
-
-
     <!--Acciones de ventana-->
     <record id="action_view_controlguias" model="ir.actions.act_window">
         <field name="name">Control de Guias</field>
         <field name="res_model">control_guias</field>
     </record>
-
-
-
-
-    
     <!--Menus-->
-
     <menuitem
         id="menu_main_tabla_control"
         parent=""
         name="Tabla Control"
         action="tabla_control.action_view_controlguias"/>
-
-    <menuitem
-        id="menu_controlguias"
-        name="Control de guias"
-        parent="tabla_control.menu_mas"
-        action="tabla_control.action_view_controlguias"/>
-    
     <menuitem
         id="menu_mas"
         name="Mas"
         parent="tabla_control.menu_main_tabla_control"
         action="tabla_control.action_view_facturacion"/>
-
-
-
+    <menuitem
+        id="menu_controlguias"
+        name="Control de guias"
+        parent="tabla_control.menu_mas"
+        action="tabla_control.action_view_controlguias"/>
 </odoo>
