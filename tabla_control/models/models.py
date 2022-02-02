@@ -27,6 +27,10 @@ class ControlGuias(models.Model):
                               default="pagado", required=True)
 
 
+    @api.onchange('monto_guia','impuesto','precio')
+    def _onchange_precio(self):
+        self.precio=self.monto_guia + self.impuesto
+
 class Facturacion(models.Model):
     _inherit = "account.move"
 
