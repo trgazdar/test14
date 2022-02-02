@@ -18,6 +18,9 @@
                 <field name="pikango" />
                 <field name="servintes" />
                 <field name="cliente_final_id" />
+                <field name="monto_guia" required="1"/>
+                <field name="impuesto" required="1"/>
+                <field name="precio" required="1"/>
                 <field name="valor" required="1"/>
                 <field name="estado" required="1" decoration-success="estado=='pagado'" decoration-danger="estado=='nopagado'"/>
             </tree>
@@ -30,9 +33,9 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='payment_reference']" position="after">
                 <!-- Add your fields here -->
-                <field name="fecha_inicial"/>
+                <field name="fecha_inicial" class="oe_inline"/>
                 <i class="fa fa-long-arrow-right mx-2" aria-label="Arrow icon" title="Arrow"/>
-                <field name="fecha_final"/>
+                <field name="fecha_final" class="oe_inline"/>
             </xpath>
             <xpath expr="//page[@name='other_info']" position="before">
                 <page string="Guias" name="guias" >
