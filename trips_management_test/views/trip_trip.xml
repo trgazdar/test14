@@ -1,0 +1,43 @@
+<odoo>
+    <record model="ir.ui.view" id="action_vista_trip_tree">
+        <field name="name">register.trip.tree</field>
+        <field name="model">trip.trip</field>
+        <field name="arch" type="xml">
+            <tree string="Tabla de Viajes">
+                <field name="nro_viaje"/>
+                <field name="nro_rendicion"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="action_vista_trip_form">
+        <field name="name">register.trip.form</field>
+        <field name="model">trip.trip</field>
+        <field name="arch" type="xml">
+            <form string="Formulario de viajes">
+                <sheet>
+                    <group colspan="2">
+                        <group>
+                            <field name="nro_viaje"/>
+                            <field name="nro_rendicion"/>
+                            <field name="delivery_date"/>
+                            <field name="paica_cod_tracto"/>
+                            <field name="itinerary_id"/>
+                            <field name="driver_id"/>
+                        </group>
+                        <group>
+                            <field name="shipment"/>
+                            <field name="no_axles"/>
+                            <field name="no_invoice"/>
+                            <field name="given_amount"/>
+                            <field name="stork_id"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="trip_section_ids"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

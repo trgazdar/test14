@@ -1,0 +1,31 @@
+<odoo>
+    <record model="ir.ui.view" id="action_vista_sourcing_tree">
+        <field name="name">register.sourcing.tree</field>
+        <field name="model">trip.sourcing</field>
+        <field name="arch" type="xml">
+            <tree string="Tabla de Abastecimientos">
+                <field name="code"/>
+                <field name="station"/>
+                <field name="odometer"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="action_vista_sourcing_form">
+        <field name="name">register.sourcing.form</field>
+        <field name="model">trip.sourcing</field>
+        <field name="arch" type="xml">
+            <form string="Formulario de los cursos">
+                <sheet>
+                    <group colspan="2">
+                        <group>
+                            <field name="code"/>
+                            <field name="station"/>
+                            <field name="odometer"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

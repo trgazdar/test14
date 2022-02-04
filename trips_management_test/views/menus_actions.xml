@@ -1,0 +1,40 @@
+<odoo>
+    <!--Sourcing-->
+    <record model="ir.actions.act_window" id="action_list_sourcing">
+        <field name="name">Abastecimientos de un tramo</field>
+        <field name="res_model">trip.sourcing</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!--Section-->
+    <record model="ir.actions.act_window" id="action_list_section">
+        <field name="name">Secciones de un viaje</field>
+        <field name="res_model">trip.section</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!--Trip-->
+    <record model="ir.actions.act_window" id="action_list_trip">
+        <field name="name">Viajes</field>
+        <field name="res_model">trip.trip</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!--CREAMOS MENUS-->
+    <menuitem id="main_menu"
+              name="Registro datos de viajes"/>
+
+    <menuitem id="main_menu_register"
+              name="Registros"
+              parent="main_menu"/>
+
+<!--    <menuitem id="menu_section"-->
+<!--              name="Tramos de un viaje"-->
+<!--              parent="main_menu_register"-->
+<!--              action="action_list_section"/>-->
+
+    <menuitem id="menu_trip"
+              name="Viajes"
+              parent="main_menu_register"
+              action="action_list_trip"/>
+</odoo>
