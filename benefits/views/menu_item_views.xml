@@ -1,0 +1,16 @@
+<odoo>
+    <!--  TODO agregar Grupo de administrador groups="group_stock_manager,group_stock_user"-->
+    <data>
+        <!--        Menu Principal      -->
+        <menuitem name="Beneficios" id="benefits_menu_root" groups="group_benefits_filler" web_icon="benefits,static/description/icon.png"/>
+        <!--        Cuerpo -->
+        <menuitem id="body_menu_categ" name="Cuerpo" parent="benefits_menu_root" sequence="1"/>
+        <menuitem id="body_system_menu_act" name="Sistemas del cuerpo" parent="body_menu_categ" action="body_system_action" sequence="1"/>
+        <menuitem id="body_organ_menu_act" name="Organos del cuerpo" parent="body_menu_categ" action="body_organ_action" sequence="2"/>
+        <menuitem id="body_function_menu_act" name="Funciones del cuerpo" parent="body_menu_categ" action="body_function_action" sequence="2"/>
+        <!--        Enfermedades -->
+        <menuitem id="disease_menu_categ" name="Enfermedades" parent="benefits_menu_root" sequence="2"/>
+        <menuitem id="disease_disease_menu_act" name="Enfermedades" parent="disease_menu_categ" action="body_disease_action" sequence="1"/>
+        <menuitem id="disease_illness_menu_act" name="Síntomas" parent="disease_menu_categ" action="body_illness_action" sequence="2"/>
+    </data>
+</odoo>

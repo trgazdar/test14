@@ -1,0 +1,88 @@
+<odoo>
+    <data>
+        <record id="body_system_view" model="ir.ui.view">
+            <field name="name">body.system.form</field>
+            <field name="model">body.system</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only" string="Sistema" />
+                            <h1>
+                                <field name="name" />
+                            </h1>
+                            <div name="options_active" ></div>
+                            <group>
+                                <field name="description"/>
+                                <field name="internal_code"/>
+                            </group>
+                        </div>
+                        <notebook>
+                            <page name="organ_function" string="Organos y funciones">
+                                <field name="function_ids">
+                                    <tree editable="bottom">
+                                        <field name="organ_id"/>
+                                        <field name="name"/>
+                                        <field name="description"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page name="organs" string="Organos">
+                                <field name="organ_ids">
+                                    <tree create="false" delete="false" editable="bottom">
+                                        <field name="name" readonly="1"/>
+                                        <field name="description"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page name="illness" string="Síntomas">
+                                <field name="illness_ids">
+                                    <tree create="false" delete="false" editable="bottom">
+                                        <field name="name" readonly="1"/>
+                                        <field name="description"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page name="diseases" string="Enfermedades">
+                                <field name="disease_ids">
+                                    <tree create="false" delete="false" editable="bottom">
+                                        <field name="name" readonly="1"/>
+                                        <field name="description"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record id="body_system_tree_view" model="ir.ui.view">
+            <field name="name">body.system.tree</field>
+            <field name="model">body.system</field>
+            <field name="arch" type="xml">
+                <tree string="Sistemas del cuerpo" sample="1">
+                    <field name="name" />
+                    <field name="internal_code" />
+                    <field name="organ_ids" widget="many2many_tags" optional="show"/>
+                    <field name="disease_ids" optional="hide" widget="many2many_tags" />
+                    <field name="illness_ids" optional="hide" widget="many2many_tags"/>
+                </tree>
+            </field>
+        </record>
+        <record id="body_system_action" model="ir.actions.act_window">
+            <field name="name">Sistemas del cuerpo</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">body.system</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Aún no hay sistemas del cuerpo creados.
+                </p>
+                <p>
+                    Ingrese una nuevo sistema del cuerpo.
+                </p>
+            </field>
+        </record>
+    </data>
+</odoo>

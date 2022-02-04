@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report 
+            id="action_schedule_workout_report"
+            string="Scheduled Workout Report"
+            model="workout.schedule.report" 
+            report_type="qweb-pdf"
+            file="gym_management_app.schedule_workout_report_view" 
+            name="gym_management_app.schedule_workout_report_view"
+            />
+
+        <report 
+            id="action_schedule_diet_report"
+            string="Diet Workout Report"
+            model="diet.schedule.report" 
+            report_type="qweb-pdf"
+            file="gym_management_app.schedule_diet_report_view" 
+            name="gym_management_app.schedule_diet_report_view"
+            />
+        
+    </data>
+</odoo>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- TODO agregar permisos de usuario en menu EJM:-->
+    <record model="ir.module.category" id="module_category_benefits">
+        <field name="name">Beneficios</field>
+        <field name="description">Administra los beneficios.</field>
+        <field name="sequence">99</field>
+    </record>
+
+    <record id="group_benefits_filler" model="res.groups">
+        <field name="name">Escribe datos de beneficios</field>
+        <field name="category_id" ref="module_category_benefits"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+<!-- 
+    <record id="group_hr_expense_user" model="res.groups">
+        <field name="name">All Approver</field>
+        <field name="category_id" ref="base.module_category_benefits"/>
+        <field name="implied_ids" eval="[(4, ref('hr_expense.group_hr_expense_team_approver'))]"/>
+    </record>
+
+    <record id="group_hr_expense_manager" model="res.groups">
+        <field name="name">Administrator</field>
+        <field name="category_id" ref="base.module_category_benefits"/>
+        <field name="implied_ids" eval="[(4, ref('hr_expense.group_hr_expense_user'))]"/>
+        <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+    </record>
+
+    <record id="base.default_user" model="res.users">
+        <field name="groups_id" eval="[(4,ref('hr_expense.group_hr_expense_manager'))]"/>
+    </record>
+    -->
+</odoo>
