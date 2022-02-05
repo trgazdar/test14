@@ -50,14 +50,6 @@ class Facturacion(models.Model):
 
 
 
-
-
-
-<<<<<<< HEAD
-
-
-
-=======
 class Itinerario(models.Model):
     _name = "itinerario"
 
@@ -74,4 +66,4 @@ class Choferes(models.Model):
     _name = "choferes"
 
     # chofer_id = fields.One2many("", "")
->>>>>>> a12744cc7d767ef9754740959368c9125902f96e
+
