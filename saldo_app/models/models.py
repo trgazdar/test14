@@ -64,13 +64,13 @@ class ResUsers(models.Model):
     #Le doy el modelo(tabla) y campo al que hara referencia
     movimiento_ids=fields.One2many("sa.movimiento","user_id")
     
-    #def mi_cuenta(self):
-        #return {
-        #    "type":"ir.actions.act_window",
-         #   "name":"Mi cuenta",
-          #  "res_model":"res.users",
-           # "res_id":self.env.user.id,
-            #"target":"self",
-            #"views":[(False,"form")]
+    def mi_cuenta(self):
+        return {
+            "type":"ir.actions.act_window",
+            "name":"Mi cuenta",
+            "res_model":"res.users",
+            "res_id":self.env.user.id,
+            "target":"self",
+            "views":[(False,"form")]
 
-        #}
+        }

@@ -139,7 +139,24 @@
         <field name="name">Moneda</field>
         <field name="res_model" >res.currency</field>
     </record>
+
+    <record id="action_server_micuenta" model="ir.actions.server">
+        <field name="name">Mi cuenta</field>
+        <field name="model_id" ref="base.model_res_users"></field>
+        <field name="state">code</field>
+        <field name="state">action=model.mi_cuenta()</field>
+        </record>
+
+
+
     <!--Menus-->
+
+    <menuitem
+        id="menu_mi_cuenta"
+        name="Mi cuenta"
+        parent=""
+        action="saldo_app.action_server_micuenta"
+        />
 
     <menuitem
         id="menu_main_saldoapp"
