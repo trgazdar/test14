@@ -19,17 +19,17 @@ class ControlGuias(models.Model):
     pikango = fields.Char("G.R.T Pikango")
     servintes = fields.Char("G.R.T Servintes")
     cliente_final_id = fields.Many2one("res.partner", "Cliente Final")
-    monto_guia=fields.Float("Monto Guia")
-    impuesto=fields.Float("Impuesto")
-    precio=fields.Float("Precio")
+    monto_guia = fields.Float("Monto Guia")
+    impuesto = fields.Float("Impuesto")
+    precio = fields.Float("Precio")
     valor = fields.Float("Valor")
     estado = fields.Selection(selection=[("pagado", "Pagado"), ("nopagado", "NoPagado")], string="Estado de Pago",
                               default="pagado", required=True)
 
-
-    @api.onchange('monto_guia','impuesto','precio')
+    @api.onchange('monto_guia', 'impuesto', 'precio')
     def _onchange_precio(self):
-        self.precio=self.monto_guia + self.impuesto
+        self.precio = self.monto_guia + self.impuesto
+
 
 class Facturacion(models.Model):
     _inherit = "account.move"
@@ -40,9 +40,7 @@ class Facturacion(models.Model):
 
     @api.onchange('fecha_incial', 'fecha_final', 'partner_id')
     def _onchange_guias_control_ids(self):
-
         if self.partner_id and self.fecha_final and self.fecha_inicial:
-
             busqueda_guia = self.env['control_guias'].search(
                 [('cliente_id', '=', self.partner_id.id)]
             )
@@ -53,3 +51,27 @@ class Facturacion(models.Model):
 
 
 
+
+
+<<<<<<< HEAD
+
+
+
+=======
+class Itinerario(models.Model):
+    _name = "itinerario"
+
+    # chofer_id = fields.One2many("", "")
+
+
+class Ciguena(models.Model):
+    _name = "ciguena"
+
+    # chofer_id = fields.One2many("", "")
+
+
+class Choferes(models.Model):
+    _name = "choferes"
+
+    # chofer_id = fields.One2many("", "")
+>>>>>>> a12744cc7d767ef9754740959368c9125902f96e
