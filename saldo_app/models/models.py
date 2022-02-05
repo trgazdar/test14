@@ -25,7 +25,7 @@ class Movimiento(models.Model):
     #puedo perzonalizar la tabla q creara odoo y los campos
     tag_ids=fields.Many2many("sa.tag","sa_mov_sa_tag_rel","move_id","tag_id") #Odoo creara: sa_movimiento_sa_tag_rel
     
-
+    @api.one
     @api.constrains("amount")
     def _check_amount(self):
         if not(self.amount>=0 and self.amount<=100000):
@@ -55,7 +55,7 @@ class Tag(models.Model):
     name=fields.Char("Nombre")
     
 #el nombre puede ser cualquier, solo haremos referencia a una 
-# #tabla existente
+#tabla existente
 #extendemos un modleo
 #El one2many, necesita que haya antes un Many2one en el otro modelo
 class ResUsers(models.Model):
