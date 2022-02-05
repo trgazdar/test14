@@ -1,4 +1,3 @@
-from email.policy import default
 from odoo import fields, models, api
 from odoo.exceptions import ValidationError
 
@@ -27,10 +26,10 @@ class Movimiento(models.Model):
     tag_ids=fields.Many2many("sa.tag","sa_mov_sa_tag_rel","move_id","tag_id") #Odoo creara: sa_movimiento_sa_tag_rel
     
 
-   # @api.constraints("amount")
-    #def _check_amount(self):
-     #   if not(self.amount>=0 and self.amount<=100000):
-      #      raise ValidationError("El monto debe encontrarse entre 0 y 100,000")
+    @api.constrains("amount")
+    def _check_amount(self):
+        if not(self.amount>=0 and self.amount<=100000):
+            raise ValidationError("El monto debe encontrarse entre 0 y 100,000")
 
 
 class Category(models.Model):
