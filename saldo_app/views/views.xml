@@ -117,7 +117,16 @@
     <record id="view_res_users_add_movimientos" model="ir.ui.view">
         <field name="name">view.res.users.add.movimientos</field>
         <field name="model">res.users</field>
-        <field name="inherit_id" ref=""/>
+        <field name="inherit_id" ref="bse.view_users_simple_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="sheet" position="inside">
+                <group>
+                    <field name="movimiento_ids"></field>
+                </group>
+            </xpath>
+
+        </field>
     </record>
 
 
