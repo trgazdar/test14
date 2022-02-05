@@ -48,3 +48,8 @@ class Facturacion(models.Model):
             )
 
             self.guias_control_ids = busqueda_guia
+
+
+
+
+
