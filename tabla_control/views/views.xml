@@ -78,7 +78,7 @@
                             <field name="guia_servin"/>
                             <field name="monto"/>
                             <field name="estado"/>
-                        </tre>
+                        </tree>
                     
 
 
