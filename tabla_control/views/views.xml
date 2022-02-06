@@ -69,9 +69,6 @@
                     <group>
                         <field name="fecha_pago"/>
                     </group>
-                    <group>
-                        <field name="name"/>
-                    </group>
                         <tree editable="bottom">
                             <field name="num_viaje"/>
                             <field name="fecha_viaje"/>
