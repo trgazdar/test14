@@ -157,7 +157,7 @@
         <field name="name">Mi cuenta</field>
         <field name="model_id" ref="base.model_res_users"></field>
         <field name="state">code</field>
-        <field name="state">action=model.mi_cuenta()</field>
+        <field name="code">action=model.mi_cuenta()</field>
         </record>
 
 
