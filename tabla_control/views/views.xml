@@ -101,6 +101,11 @@
         <field name="res_model">control_guias</field>
     </record>
 
+    <record id="action_view_choferes" model="ir.actions.act_window">
+        <field name="name">Choferes</field>
+        <field name="res_model">choferes</field>
+    </record>
+
 
     <!--Menus-->
     <menuitem
@@ -113,6 +118,12 @@
         name="Control de guias"
         parent="tabla_control.menu_main_tabla_control"
         action="tabla_control.action_view_controlguias"/>
+    <menuitem
+        id="menu_choferes"
+        name="Choferes"
+        parent="tabla_control.menu_main_tabla_control"
+        action="tabla_control.action_view_choferes"/>
+
 </odoo>
 
 
