@@ -69,13 +69,18 @@
                     <group>
                         <field name="fecha_pago"/>
                     </group>
-                        <tree editable="bottom">
-                            <field name="num_viaje"/>
-                            <field name="fecha_viaje"/>
-                            <field name="guia_servin"/>
-                            <field name="monto"/>
-                            <field name="estado"/>
-                        </tree>
+                    <notebook>
+                        <page name="name" string="Descripcion">
+                            <tree editable="bottom">
+                                <field name="num_viaje"/>
+                                <field name="fecha_viaje"/>
+                                <field name="guia_servin"/>
+                                <field name="monto"/>
+                                <field name="estado"/>
+                            </tree>
+                        </page>
+                    </notebook>
+
                     
 
 
