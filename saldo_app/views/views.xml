@@ -122,7 +122,9 @@
 
             <xpath expr="sheet" position="inside">
                 <group>
-                    <field name="movimiento_ids"></field>
+                    <field name="movimiento_ids"/>
+                    <field name="total_ingresos"/>
+                    <field name="total_egresos"/>
                 </group>
             </xpath>
 

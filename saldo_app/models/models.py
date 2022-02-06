@@ -63,6 +63,15 @@ class ResUsers(models.Model):
     
     #Le doy el modelo(tabla) y campo al que hara referencia
     movimiento_ids=fields.One2many("sa.movimiento","user_id")
+    total_ingresos=fields.Float("Total de Ingresos", compute="_compute_movimientos")
+    total_egresos=fields.Float("Total de Egresos", compute="_compute_")
+    
+    @api.depends("movimiento_ids")
+    def _compute_movimientos(self):
+        for record in self:
+            record.total_ingresos= sum(record.movimientos_ids.filtered(lambda r:r.type_move=='ingreso').mapped("amount"))
+            record.total_egresos= sum(record.movimientos_ids.filtered(lambda r:r.type_move=='gasto').mapped("amount"))
+
     
     def mi_cuenta(self):
         return {
