@@ -50,6 +50,7 @@ class Facturacion(models.Model):
 
 
 
+
 class Itinerario(models.Model):
     _name = "itinerario"
 
@@ -64,6 +65,15 @@ class Ciguena(models.Model):
 
 class Choferes(models.Model):
     _name = "choferes"
+
+    name=fields.Char("Chofer")
+    fecha_pago=fields.Date("Fecha de Pago")
+    num_viaje=fields.Char("Número de Viaje")
+    fecha_viaje=fields.Date("Fecha d viaje")
+    guia_servin=fields.Char("Guia transportada Servintes")
+    monto=fields.Float("Monto")
+    estado=fields.Selection(selection=[("pagado", "Pagado"), ("nopagado", "NoPagado")], string="Estado de Pago",
+                              default="pagado", required=True)
 
     # chofer_id = fields.One2many("", "")
 

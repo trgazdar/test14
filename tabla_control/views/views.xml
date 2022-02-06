@@ -1,5 +1,9 @@
 <odoo>
-    <record model="ir.ui.view" id="view_tree_tabla_control">
+
+
+
+
+    <record id="view_tree_tabla_control" model="ir.ui.view" >
         <field name="name">tabla_control.view.tree</field>
         <field name="model">control_guias</field>
         <field name="arch" type="xml">
@@ -26,6 +30,10 @@
             </tree>
         </field>
     </record>
+
+
+
+
     <record id="account_withholding_form" model="ir.ui.view">
         <field name="name">account.move.inherit.view.form</field>
         <field name="model">account.move</field>
@@ -47,11 +55,53 @@
             </xpath>
         </field>
     </record>
+
+
+    <record id="view_form_choferes" model="ir.ui.view">
+        <field name="name">choferes.view.form</field>
+        <field name="model">choferes</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                    <group>
+                        <field name="fecha_pago"/>
+                    </group>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                        <tree editable="bottom">
+                            <field name="num_viaje"/>
+                            <field name="fecha_viaje"/>
+                            <field name="guia_servin"/>
+                            <field name="monto"/>
+                            <field name="estado"/>
+                        </tre>
+                    
+
+
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+
+
+
+
+
+
     <!--Acciones de ventana-->
     <record id="action_view_controlguias" model="ir.actions.act_window">
         <field name="name">Control de Guias</field>
         <field name="res_model">control_guias</field>
     </record>
+
+
     <!--Menus-->
     <menuitem
         id="menu_main_tabla_control"
