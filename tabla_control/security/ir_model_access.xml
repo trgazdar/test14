@@ -8,4 +8,17 @@
         <field name="perm_unlink" eval="1"></field>
         <field name="perm_read" eval="1"></field>
     </record>
+    <record id="model_access_choferes" model="ir.model.access">
+        <field name="name">model.access.choferes</field>
+        <field name="model_id" ref="tabla_control.model_choferes"></field>
+        <field name="group_id" ref=""></field>
+        <field name="perm_create" eval="1"></field>
+        <field name="perm_write" eval="1"></field>
+        <field name="perm_unlink" eval="1"></field>
+        <field name="perm_read" eval="1"></field>
+    </record>
+
+
+
+
 </odoo>

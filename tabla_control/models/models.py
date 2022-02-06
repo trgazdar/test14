@@ -65,6 +65,7 @@ class Ciguena(models.Model):
 
 class Choferes(models.Model):
     _name = "choferes"
+    _description = "Pago a choferes"
 
     name=fields.Char("Chofer")
     fecha_pago=fields.Date("Fecha de Pago")

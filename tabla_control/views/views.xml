@@ -117,7 +117,7 @@
         action="tabla_control.action_view_controlguias"/>
     <menuitem
         id="menu_choferes"
-        name="Choferes"
+        name="Pago a choferes"
         parent="tabla_control.menu_main_tabla_control"
         action="tabla_control.action_view_choferes"/>
 
