@@ -1,24 +1,27 @@
 <odoo>
+    <!--VISTA QUE SE MUESTRA AL MOMENTO DE LISTAR-->
     <record model="ir.ui.view" id="action_vista_trip_tree">
         <field name="name">register.trip.tree</field>
         <field name="model">trip.trip</field>
         <field name="arch" type="xml">
             <tree string="Tabla de Viajes">
-                <field name="nro_viaje"/>
+                <field name="no_trip"/>
                 <field name="nro_rendicion"/>
             </tree>
         </field>
     </record>
 
+    <!--FORMULARIO PARA AGREGAR-->
     <record model="ir.ui.view" id="action_vista_trip_form">
         <field name="name">register.trip.form</field>
         <field name="model">trip.trip</field>
         <field name="arch" type="xml">
             <form string="Formulario de viajes">
                 <sheet>
-                    <group colspan="2">
+                    <!--DATOS DEL VIAJE-->
+                    <group col="2" string="DATOS DEL VIAJE">
                         <group>
-                            <field name="nro_viaje"/>
+                            <field name="no_trip"/>
                             <field name="nro_rendicion"/>
                             <field name="delivery_date"/>
                             <field name="paica_cod_tracto"/>
@@ -33,9 +36,22 @@
                             <field name="stork_id"/>
                         </group>
                     </group>
-                    <group>
-                        <field name="trip_section_ids"/>
+                    <group string="TRAMOS DEL VIAJE">
+                        <field name="trip_section_ids" string=""/>
                     </group>
+                    <!--GASTOS DEL VIAJE-->
+                    <group col="3" string="GASTOS DEL VIAJE">
+                        <group>
+                            <field name="viaticos" colspan="1"/>
+                        </group>
+                        <group>
+                            <field name="peajes"/>
+                        </group>
+                        <group>
+                            <field name="otros_viajes"/>
+                        </group>
+                    </group>
+
                 </sheet>
             </form>
         </field>

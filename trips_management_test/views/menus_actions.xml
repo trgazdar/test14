@@ -20,6 +20,27 @@
         <field name="view_mode">tree,form</field>
     </record>
 
+    <!--Driver-->
+    <record model="ir.actions.act_window" id="action_list_driver">
+        <field name="name">Conductores</field>
+        <field name="res_model">trip.driver</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!--Itinerary-->
+    <record model="ir.actions.act_window" id="action_list_itinerary">
+        <field name="name">Itinerarios</field>
+        <field name="res_model">trip.itinerary</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!--Stork-->
+    <record model="ir.actions.act_window" id="action_list_stork">
+        <field name="name">Cigueniasas</field>
+        <field name="res_model">trip.stork</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
     <!--CREAMOS MENUS-->
     <menuitem id="main_menu"
               name="Registro datos de viajes"/>
@@ -28,13 +49,18 @@
               name="Registros"
               parent="main_menu"/>
 
-<!--    <menuitem id="menu_section"-->
-<!--              name="Tramos de un viaje"-->
-<!--              parent="main_menu_register"-->
-<!--              action="action_list_section"/>-->
+    <!--    <menuitem id="menu_section"-->
+    <!--              name="Tramos de un viaje"-->
+    <!--              parent="main_menu_register"-->
+    <!--              action="action_list_section"/>-->
 
     <menuitem id="menu_trip"
               name="Viajes"
               parent="main_menu_register"
               action="action_list_trip"/>
+
+<!--        <menuitem id="menu_driver"-->
+<!--              name="Operadores"-->
+<!--              parent="main_menu_register"-->
+<!--              action="action_list_driver"/>-->
 </odoo>

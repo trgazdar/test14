@@ -4,7 +4,7 @@
         <field name="model">trip.section</field>
         <field name="arch" type="xml">
             <tree string="Tabla tramos de viaje">
-                <field name="code"/>
+                <field name="type"/>
                 <field name="departure_date"/>
                 <field name="arrival_date"/>
             </tree>
@@ -15,18 +15,27 @@
         <field name="name">register.section.form</field>
         <field name="model">trip.section</field>
         <field name="arch" type="xml">
+            <!--            <tree string="Tramos de viaje" editable="bottom">-->
+            <!--                <field name="code"/>-->
+            <!--                <field name="departure_date"/>-->
+            <!--                <field name="arrival_date"/>-->
+            <!--                <field name="type"/>-->
+            <!--                <field name="trip_sourcing_ids"/>-->
+            <!--            </tree>-->
             <form string="Formulario de tramos">
                 <sheet>
                     <group colspan="2">
                         <group>
-                            <field name="code"/>
+                            <field name="type"/>
+                        </group>
+                        <group>
                             <field name="departure_date"/>
                             <field name="arrival_date"/>
                         </group>
-                        <group>
+                    </group>
+                    <group>
                             <field name="trip_sourcing_ids"/>
                         </group>
-                    </group>
                 </sheet>
             </form>
         </field>

@@ -5,7 +5,7 @@ class sourcing(models.Model):
     _name = 'trip.sourcing'
     _description = 'Abastecimiento de un tramo '
 
-    code = fields.Char(string='Codigo', required=True)
+    source = fields.Char(string='Abastecimiento', required=True)
     station = fields.Char(string='Estación', required=True)
     odometer = fields.Char(string='Odómetro', required=True)
 
