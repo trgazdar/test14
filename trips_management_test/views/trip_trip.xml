@@ -47,8 +47,8 @@
                             <field name="driver_id"/>
                         </group>
                     </group>
-                    <group>
-                        <field name="trip_trip_detail_ids" string=""/>
+                    <group >
+                        <field name="trip_trip_detail_ids" string="Guias"/>
                     </group>
 
                     <!--GASTOS DEL VIAJE-->
