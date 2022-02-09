@@ -28,8 +28,8 @@
                     </group>
                     <group>
                         <field name="trip_sourcing_ids">
-                            <tree string="Tabla de Abastecimientos" editable="bottom">
-                                <field name="source"/>
+                            <tree editable="bottom">
+<!--                                <field name="source"/>-->
                                 <field name="station"/>
                                 <field name="odometer"/>
                             </tree>
