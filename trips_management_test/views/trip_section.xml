@@ -29,7 +29,7 @@
                     <group>
                         <field name="trip_sourcing_ids">
                             <tree editable="bottom">
-<!--                                <field name="source"/>-->
+                                <field name="source"/>
                                 <field name="station"/>
                                 <field name="odometer"/>
                             </tree>
