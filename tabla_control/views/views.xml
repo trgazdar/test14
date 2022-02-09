@@ -69,7 +69,10 @@
                     <group>
                         <field name="fecha_pago"/>
                     </group>
-                    <notebook>
+                    
+                </sheet>
+            </form>
+            <notebook>
                         <page name="name" string="Descripcion">
                             <tree editable="bottom">
                                 <field name="num_viaje"/>
@@ -79,14 +82,7 @@
                                 <field name="estado"/>
                             </tree>
                         </page>
-                    </notebook>
-
-                    
-
-
-
-                </sheet>
-            </form>
+            </notebook>
         </field>
     </record>
 
