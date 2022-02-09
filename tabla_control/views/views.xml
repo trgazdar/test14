@@ -110,7 +110,6 @@
     <record id="action_view_choferes" model="ir.actions.act_window">
         <field name="name">Choferes</field>
         <field name="res_model">choferes</field>
-        <field name="view_mode">form,tree</field>
     </record>
 
 
