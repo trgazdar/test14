@@ -48,6 +48,9 @@ class Facturacion(models.Model):
             self.guias_control_ids = busqueda_guia
 
 
+
+
+
 class Itinerario(models.Model):
     _name = "itinerario"
 
@@ -62,5 +65,18 @@ class Ciguena(models.Model):
 
 class Choferes(models.Model):
     _name = "choferes"
+    _description = "Pago a choferes"
+
+    fecha_inicial = fields.Date("Fecha inicial")
+    fecha_final = fields.Date("Fecha final")
+    name=fields.Char("Chofer")
+    fecha_pago=fields.Date("Fecha de Pago")
+    num_viaje=fields.Char("Número de Viaje")
+    fecha_viaje=fields.Date("Fecha d viaje")
+    guia_servin=fields.Char("Guia transportada Servintes")
+    monto=fields.Float("Monto")
+    estado=fields.Selection(selection=[("pagado", "Pagado"), ("nopagado", "NoPagado")], string="Estado de Pago",
+                              default="pagado", required=True)
 
     # chofer_id = fields.One2many("", "")
+

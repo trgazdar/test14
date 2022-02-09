@@ -114,7 +114,22 @@
 
     </record>
 
+    <record id="view_res_users_add_movimientos" model="ir.ui.view">
+        <field name="name">view.res.users.add.movimientos</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_simple_form"/>
+        <field name="arch" type="xml">
 
+            <xpath expr="sheet" position="inside">
+                <group>
+                    <field name="movimiento_ids"/>
+                    <field name="total_ingresos"/>
+                    <field name="total_egresos"/>
+                </group>
+            </xpath>
+
+        </field>
+    </record>
 
 
 
@@ -139,7 +154,24 @@
         <field name="name">Moneda</field>
         <field name="res_model" >res.currency</field>
     </record>
+
+    <record id="action_server_micuenta" model="ir.actions.server">
+        <field name="name">Mi cuenta</field>
+        <field name="model_id" ref="base.model_res_users"></field>
+        <field name="state">code</field>
+        <field name="code">action=model.mi_cuenta()</field>
+        </record>
+
+
+
     <!--Menus-->
+
+    <menuitem
+        id="menu_mi_cuenta"
+        name="Mi cuenta"
+        parent="saldo_app.menu_main_saldoapp"
+        action="saldo_app.action_server_micuenta"
+        />
 
     <menuitem
         id="menu_main_saldoapp"

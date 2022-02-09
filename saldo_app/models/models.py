@@ -1,4 +1,3 @@
-from email.policy import default
 from odoo import fields, models, api
 from odoo.exceptions import ValidationError
 
@@ -26,11 +25,11 @@ class Movimiento(models.Model):
     #puedo perzonalizar la tabla q creara odoo y los campos
     tag_ids=fields.Many2many("sa.tag","sa_mov_sa_tag_rel","move_id","tag_id") #Odoo creara: sa_movimiento_sa_tag_rel
     
-
-   # @api.constraints("amount")
-    #def _check_amount(self):
-     #   if not(self.amount>=0 and self.amount<=100000):
-      #      raise ValidationError("El monto debe encontrarse entre 0 y 100,000")
+    
+    @api.constrains("amount")
+    def _check_amount(self):
+        if not(self.amount>=0 and self.amount<=100000):
+            raise ValidationError("El monto debe encontrarse entre 0 y 100,000")
 
 
 class Category(models.Model):
@@ -56,7 +55,7 @@ class Tag(models.Model):
     name=fields.Char("Nombre")
     
 #el nombre puede ser cualquier, solo haremos referencia a una 
-# #tabla existente
+#tabla existente
 #extendemos un modleo
 #El one2many, necesita que haya antes un Many2one en el otro modelo
 class ResUsers(models.Model):
@@ -64,14 +63,23 @@ class ResUsers(models.Model):
     
     #Le doy el modelo(tabla) y campo al que hara referencia
     movimiento_ids=fields.One2many("sa.movimiento","user_id")
+    total_ingresos=fields.Float("Total de Ingresos", compute="_compute_movimientos")
+    total_egresos=fields.Float("Total de Egresos", compute="_compute_")
     
-    #def mi_cuenta(self):
-        #return {
-        #    "type":"ir.actions.act_window",
-         #   "name":"Mi cuenta",
-          #  "res_model":"res.users",
-           # "res_id":self.env.user.id,
-            #"target":"self",
-            #"views":[(False,"form")]
+    @api.depends("movimiento_ids")
+    def _compute_movimientos(self):
+        for record in self:
+            record.total_ingresos= sum(record.movimiento_ids.filtered(lambda r:r.type_move=='ingreso').mapped("amount"))
+            record.total_egresos= sum(record.movimiento_ids.filtered(lambda r:r.type_move=='gasto').mapped("amount"))
 
-        #}
+    
+    def mi_cuenta(self):
+        return {
+            "type":"ir.actions.act_window",
+            "name":"Mi cuenta",
+            "res_model":"res.users",
+            "res_id":self.env.user.id,
+            "target":"self",
+            "views":[(False,"form")]
+
+        }
