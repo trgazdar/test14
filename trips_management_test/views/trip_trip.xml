@@ -26,18 +26,29 @@
                             <field name="delivery_date"/>
                             <field name="paica_cod_tracto"/>
                             <field name="itinerary_id"/>
-                            <field name="driver_id"/>
                         </group>
                         <group>
                             <field name="shipment"/>
                             <field name="no_axles"/>
                             <field name="no_invoice"/>
                             <field name="given_amount"/>
-                            <field name="stork_id"/>
                         </group>
                     </group>
                     <group string="TRAMOS DEL VIAJE">
                         <field name="trip_section_ids" string=""/>
+                    </group>
+
+                    <!--DETALLES DE UN VIAJE-->
+                    <group col="2" string="DETALLES DEL VIAJE">
+                        <group>
+                            <field name="stork_id"/>
+                        </group>
+                        <group>
+                            <field name="driver_id"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="trip_trip_detail_ids" string=""/>
                     </group>
 
                     <!--GASTOS DEL VIAJE-->
@@ -52,19 +63,6 @@
                             <field name="otros_viajes"/>
                         </group>
                     </group>
-
-                    <!--DETALLES DE UN VIAJE-->
-<!--                    <group col="2" string="DATOS DEL VIAJE">-->
-<!--                        <group>-->
-<!--                            <field name="stork_id"/>-->
-<!--                        </group>-->
-<!--                        <group>-->
-<!--                            <field name="driver_id"/>-->
-<!--                        </group>-->
-<!--                    </group>-->
-<!--                    <group string="TRAMOS DEL VIAJE">-->
-<!--                        <field name="trip_section_ids" string=""/>-->
-<!--                    </group>-->
                 </sheet>
             </form>
         </field>

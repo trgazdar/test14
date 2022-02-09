@@ -15,13 +15,6 @@
         <field name="name">register.section.form</field>
         <field name="model">trip.section</field>
         <field name="arch" type="xml">
-            <!--            <tree string="Tramos de viaje" editable="bottom">-->
-            <!--                <field name="code"/>-->
-            <!--                <field name="departure_date"/>-->
-            <!--                <field name="arrival_date"/>-->
-            <!--                <field name="type"/>-->
-            <!--                <field name="trip_sourcing_ids"/>-->
-            <!--            </tree>-->
             <form string="Formulario de tramos">
                 <sheet>
                     <group colspan="2">
