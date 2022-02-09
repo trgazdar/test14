@@ -39,6 +39,7 @@
                     <group string="TRAMOS DEL VIAJE">
                         <field name="trip_section_ids" string=""/>
                     </group>
+
                     <!--GASTOS DEL VIAJE-->
                     <group col="3" string="GASTOS DEL VIAJE">
                         <group>
@@ -52,6 +53,18 @@
                         </group>
                     </group>
 
+                    <!--DETALLES DE UN VIAJE-->
+<!--                    <group col="2" string="DATOS DEL VIAJE">-->
+<!--                        <group>-->
+<!--                            <field name="stork_id"/>-->
+<!--                        </group>-->
+<!--                        <group>-->
+<!--                            <field name="driver_id"/>-->
+<!--                        </group>-->
+<!--                    </group>-->
+<!--                    <group string="TRAMOS DEL VIAJE">-->
+<!--                        <field name="trip_section_ids" string=""/>-->
+<!--                    </group>-->
                 </sheet>
             </form>
         </field>
