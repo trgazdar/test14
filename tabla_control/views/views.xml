@@ -71,13 +71,15 @@
                     </group>
                     <notebook>
                         <page name="name" string="Descripcion">
-                            <tree editable="bottom">
-                                <field name="num_viaje"/>
-                                <field name="fecha_viaje"/>
-                                <field name="guia_servin"/>
-                                <field name="monto"/>
-                                <field name="estado"/>
-                            </tree>
+                            <field name="name" >
+                                <tree editable="bottom">
+                                    <field name="num_viaje"/>
+                                    <field name="fecha_viaje"/>
+                                    <field name="guia_servin"/>
+                                    <field name="monto"/>
+                                    <field name="estado"/>
+                                </tree>
+                            </field>
                         </page>
                     </notebook>
 
