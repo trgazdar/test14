@@ -67,6 +67,8 @@ class Choferes(models.Model):
     _name = "choferes"
     _description = "Pago a choferes"
 
+    fecha_inicial = fields.Date("Fecha inicial")
+    fecha_final = fields.Date("Fecha final")
     name=fields.Char("Chofer")
     fecha_pago=fields.Date("Fecha de Pago")
     num_viaje=fields.Char("Número de Viaje")

@@ -69,24 +69,32 @@
                     <group>
                         <field name="fecha_pago"/>
                     </group>
-                    
+                    <group>
+                        <div class="o_row">
+                            <h5 class="oe_inline">Rango de Fecha</h5>
+                            <field name="fecha_inicial" class="oe_inline"/>
+                            <i class="fa fa-long-arrow-right mx-2" aria-label="Arrow icon" title="Arrow"/>
+                            <field name="fecha_final" class="oe_inline"/>
+                        </div>
+                    </group>
                 </sheet>
             </form>
-            <notebook>
-                        <page name="name" string="Descripcion">
-                            <tree editable="bottom">
-                                <field name="num_viaje"/>
-                                <field name="fecha_viaje"/>
-                                <field name="guia_servin"/>
-                                <field name="monto"/>
-                                <field name="estado"/>
-                            </tree>
-                        </page>
-            </notebook>
+
         </field>
     </record>
 
-
+   <record id="view_tree_choferes" model="ir.ui.view">
+        <field name="name">choferes.tree.choferes</field>
+        <field name="model">choferes</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"></field>
+                <field name="num_viaje"></field>
+                <field name="guia_servin" />
+                <field name="monto"></field>
+                <field name="estado" />
+            </tree>
+        </field>
 
 
 
