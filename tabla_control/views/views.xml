@@ -63,11 +63,11 @@
         <field name="name">choferes.view.tree</field>
         <field name="model">choferes</field>
         <field name="arch" type="xml">
-            <tree string="Resumen de pagos">
-                <field name="name"></field>
-                <field name="num_viaje"></field>
+            <tree editable="bottom" string="Resumen de pagos">
+                <field name="name"/>
+                <field name="num_viaje"/>
                 <field name="guia_servin" />
-                <field name="monto"></field>
+                <field name="monto"/>
                 <field name="estado" />
             </tree>
         </field>
