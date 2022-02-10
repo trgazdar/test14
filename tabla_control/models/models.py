@@ -67,16 +67,28 @@ class Choferes(models.Model):
     _name = "choferes"
     _description = "Pago a choferes"
 
+    
     fecha_inicial = fields.Date("Fecha inicial")
     fecha_final = fields.Date("Fecha final")
     name=fields.Char("Chofer")
+    #viajes_ids=
+    #guia=fields.Char("viajes",related="viajes.guia_servin")
     fecha_pago=fields.Date("Fecha de Pago")
-    num_viaje=fields.Char("Número de Viaje")
-    fecha_viaje=fields.Date("Fecha d viaje")
-    guia_servin=fields.Char("Guia transportada Servintes")
-    monto=fields.Float("Monto")
+    total=fields.Float("Total")
     estado=fields.Selection(selection=[("pagado", "Pagado"), ("nopagado", "NoPagado")], string="Estado de Pago",
                               default="pagado", required=True)
 
     # chofer_id = fields.One2many("", "")
+
+class viajes(models.Model):
+    _name = "viajes"
+    _description = "Viajes"
+
+    chofer_id=fields.Many2one("Chofer")
+    num_viaje=fields.Char("Número de Viaje")
+    fecha_viaje=fields.Date("Fecha d viaje")
+    guia_servin=fields.Char("Guia transportada Servintes")
+    monto=fields.Float("Monto")
+
+
 

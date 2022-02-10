@@ -63,7 +63,7 @@
         <field name="name">choferes.view.tree</field>
         <field name="model">choferes</field>
         <field name="arch" type="xml">
-            <tree editable="bottom" string="Resumen de pagos">
+            <tree string="Resumen de pagos">
                 <field name="name"/>
                 <field name="num_viaje"/>
                 <field name="guia_servin" />
@@ -113,7 +113,7 @@
         <field name="res_model">choferes</field>
         <field name="view_mode">tree,form</field>
     </record>
-    
+
 
     <!--Menus-->
     <menuitem
