@@ -21,7 +21,8 @@ class Movimiento(models.Model):
     #Nombre del modelo al que debo relacionar, muchos movimientos son de 1 usuario
     user_id=fields.Many2one("res.users",string="Usuario", default=lambda self: self.env.user.id)
     category_id=fields.Many2one("sa.category","Categoria")
-    
+    email=fields.Char(related="user_id.email",string="Correo electronico")
+
     #puedo perzonalizar la tabla q creara odoo y los campos
     tag_ids=fields.Many2many("sa.tag","sa_mov_sa_tag_rel","move_id","tag_id") #Odoo creara: sa_movimiento_sa_tag_rel
     

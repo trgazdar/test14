@@ -22,6 +22,7 @@
                             <field name="tag_ids" widget="many2many_tags"></field>
                             <field name="category_id" />
                             <field name="user_id"/>
+                            <field name="email" />
                         </group>
                     </group>
                     <group>
@@ -123,6 +124,7 @@
 
             <xpath expr="sheet" position="inside">
                 <group>
+                    <field name="email" />
                     <field name="movimiento_ids"/>
                     <field name="total_ingresos"/>
                     <field name="total_egresos"/>
