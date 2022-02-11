@@ -39,6 +39,19 @@ class Movimiento(models.Model):
         elif self.type_move=="gasto":
             self.name = "Gasto: "
 
+    @api.model
+    def create(self,vals):
+        name=vals.get("name","-")
+        amount=vals.get("amount","0")
+        type_move=vals.get("type_move","")
+        date=vals.get("date","")
+
+        notas="""<p>Tipo de Movimiento: {}</p><p>Nombre: {}</p><p>Monto: {}</p><p>Fecha: {}</p>"""
+        vals["notas"]=notas.format(type_move,name,amount,date)
+        
+        res=super(Movimiento,self).create(vals)
+        return res
+
 class Category(models.Model):
     _name="sa.category"
     _description="Categoria"
