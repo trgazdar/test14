@@ -52,12 +52,19 @@ class Movimiento(models.Model):
         res=super(Movimiento,self).create(vals)
         return res
 
+    def unlink(self):
+        for record in self:
+            if record.amount>=50:
+                raise ValidationError ("Movimientos mayores a 50 no pueden ser eliminados")
+        return super(Movimiento,self).unlink()
+
 class Category(models.Model):
     _name="sa.category"
     _description="Categoria"
     
     name=fields.Char("Nombre")
-    
+    type_moved=fields.Selection(selection=[("ingreso","Ingreso"),("gasto","Gasto")],string="Tipo", default="ingreso", required=True)
+
     def ver_movimientos(self):
         return {
             "type":"ir.actions.act_window",
