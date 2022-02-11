@@ -20,7 +20,8 @@
                         </group>
                         <group>
                             <field name="tag_ids" widget="many2many_tags"></field>
-                            <!--<field name="category_id" domain="[('type_moved','=',type_move)]" widget="radio"/>-->
+                            <!--domain:[], primero el campo que pertenece a category_id y luego el del modelo que estael form-->
+                            <field name="category_id" domain="[('type_moved','=',type_move)]" widget="radio"/>
                             <field name="user_id"/>
                             <field name="email" />
                         </group>
