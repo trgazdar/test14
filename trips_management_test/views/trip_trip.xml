@@ -10,7 +10,6 @@
             </tree>
         </field>
     </record>
-
     <!--FORMULARIO PARA AGREGAR-->
     <record model="ir.ui.view" id="action_vista_trip_form">
         <field name="name">register.trip.form</field>
@@ -19,49 +18,42 @@
             <form string="Formulario de viajes">
                 <sheet>
                     <!--DATOS DEL VIAJE-->
-                    <group col="2" string="DATOS DEL VIAJE">
-                        <group>
+                    <group col="2" >
+                        <group string="DATOS DEL VIAJE">
                             <field name="no_trip"/>
                             <field name="nro_rendicion"/>
                             <field name="delivery_date"/>
                             <field name="paica_cod_tracto"/>
                             <field name="itinerary_id"/>
-                        </group>
-                        <group>
                             <field name="shipment"/>
                             <field name="no_axles"/>
                             <field name="no_invoice"/>
                             <field name="given_amount"/>
                         </group>
+                        <group string="TRAMOS DEL VIAJE">
+                            <field name="trip_section_ids" nolabel="1"/>
+                        </group>
                     </group>
-                    <group string="TRAMOS DEL VIAJE">
-                        <field name="trip_section_ids" string=""/>
-                    </group>
-
                     <!--DETALLES DE UN VIAJE-->
                     <group col="2" string="DETALLES DEL VIAJE">
-                        <group>
-                            <field name="stork_id"/>
-                        </group>
-                        <group>
-                            <field name="driver_id"/>
-                        </group>
+                        <field name="stork_id"/>
+                        <field name="driver_id"/>
                     </group>
-                    <group >
-                        <field name="trip_trip_detail_ids" string="Guias"/>
+                    <group>
+                        <field name="trip_trip_detail_ids" string="Guias">
+                            <tree>
+                                <field name="servintes"/>
+                                <field name="pikango"/>
+                                <field name="remitente"/>
+                                <field name="precio"/>
+                            </tree>
+                        </field>
                     </group>
-
                     <!--GASTOS DEL VIAJE-->
                     <group col="3" string="GASTOS DEL VIAJE">
-                        <group>
-                            <field name="viaticos" colspan="1"/>
-                        </group>
-                        <group>
-                            <field name="peajes"/>
-                        </group>
-                        <group>
-                            <field name="otros_viajes"/>
-                        </group>
+                        <field name="viaticos" colspan="1"/>
+                        <field name="peajes"/>
+                        <field name="otros_viajes"/>
                     </group>
                 </sheet>
             </form>

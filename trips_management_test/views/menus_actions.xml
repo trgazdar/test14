@@ -44,9 +44,9 @@
 
     <!--CREAMOS MENUS-->
     <menuitem id="trip_main_menu"
-              name="Viajes"/>
+              name="Gestion de Viajes"/>
     <menuitem id="trip_main_menu_register_viajes"
-              name="viajes 1"
+              name="Viajes"
               parent="trip_main_menu"
               action="action_list_trip"/>
 

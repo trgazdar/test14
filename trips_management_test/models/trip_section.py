@@ -7,6 +7,8 @@ class section(models.Model):
 
     departure_date = fields.Datetime(string='Fecha de salida', required=True)
     arrival_date = fields.Datetime(string='Fecha de llegada', required=True)
+    
+    # Consultar
     type = fields.Selection(
         selection=[("ida", "Ida"), ("vuelta", "Vuelta")],
         string="Tipo",
