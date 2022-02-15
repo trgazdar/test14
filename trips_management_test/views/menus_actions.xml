@@ -21,13 +21,6 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <!--Driver-->
-    <record model="ir.actions.act_window" id="action_list_driver">
-        <field name="name">trip.conductores</field>
-        <field name="res_model">trip.driver</field>
-        <field name="view_mode">tree,form</field>
-    </record>
-
     <!--Itinerary-->
     <record model="ir.actions.act_window" id="action_list_itinerary">
         <field name="name">trip.itinerarios</field>
