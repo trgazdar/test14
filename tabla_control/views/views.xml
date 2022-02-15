@@ -63,7 +63,7 @@
         <field name="name">choferes.view.tree</field>
         <field name="model">choferes</field>
         <field name="arch" type="xml">
-            <tree editable="bottom" string="Resumen de pagos">
+            <tree string="Resumen de pagos">
                 <field name="name"/>
                 <field name="num_viaje"/>
                 <field name="guia_servin" />
@@ -73,7 +73,8 @@
         </field>
     </record>
 
-    <!--<record id="view_form_choferes" model="ir.ui.view">
+
+    <record id="view_form_choferes" model="ir.ui.view">
         <field name="name">choferes.view.form</field>
         <field name="model">choferes</field>
         <field name="arch" type="xml">
@@ -96,7 +97,7 @@
                 </sheet>
             </form>
         </field>
-    </record>-->
+    </record>
 
 
 
@@ -110,6 +111,7 @@
     <record id="action_view_choferes" model="ir.actions.act_window">
         <field name="name">Choferes</field>
         <field name="res_model">choferes</field>
+        <field name="view_mode">tree,form</field>
     </record>
 
 

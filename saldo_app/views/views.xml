@@ -8,19 +8,22 @@
             <form>
                 <sheet>
                     <group>
+                        <field name="type_move" widget="radio" required="1" />
                         <field name="name" required="1" />
                     </group>
                     <group>
                         <group>
-                            <field name="type_move" widget="radio" required="1" ></field>
+                            
                             <field name="currency_id" invisible="1"/>
                             <field name="amount" required="1" widget="monetary" options="{'currency_field':'currency_id'}" />
                             <field name="date" required="1"></field>
                         </group>
                         <group>
                             <field name="tag_ids" widget="many2many_tags"></field>
-                            <field name="category_id" />
+                            <!--domain:[], primero el campo que pertenece a category_id y luego el del modelo que estael form-->
+                            <field name="category_id" domain="[('type_moved','=',type_move)]" widget="radio"/>
                             <field name="user_id"/>
+                            <field name="email" />
                         </group>
                     </group>
                     <group>
@@ -105,6 +108,7 @@
                 <sheet>
                     <group>
                         <field name="name"/>
+                        <field name="type_moved" />
                         <button name="ver_movimientos" type="object" string="Ver Movimiento" />
                     </group>
                 
@@ -122,6 +126,7 @@
 
             <xpath expr="sheet" position="inside">
                 <group>
+                    <field name="email" />
                     <field name="movimiento_ids"/>
                     <field name="total_ingresos"/>
                     <field name="total_egresos"/>
