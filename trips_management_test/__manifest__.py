@@ -24,6 +24,7 @@
     # always loaded
     'data': [
         'views/menus_actions.xml',
+        'views/control_guias_views.xml',
         'views/trip_sourcing.xml',
         'views/trip_section.xml',
         'views/trip_trip.xml',

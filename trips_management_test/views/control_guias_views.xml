@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="view_tree_tabla_control" model="ir.ui.view" >
+        <field name="name">tabla_control.view.tree</field>
+        <field name="model">control_guias</field>
+        <field name="arch" type="xml">
+            <tree string="Control de Guias" editable="bottom">
+                <field name="fecha_envio" required="1"/>
+                <field name="fecha_entrega" required="1" />
+                <field name="cliente_id" required="1" />
+                <field name="destino" required="1"/>
+                <field name="marca" required="1"/>
+                <field name="modelo" required="1"/>
+                <field name="color" required="1"/>
+                <field name="destinatario_id" required="1"/>
+                <field name="cod_ciguena" required="1"/>
+                <field name="remitente" required="1"/>
+                <field name="num_chasis" required="1"/>
+                <field name="pikango" />
+                <field name="servintes" />
+                <field name="cliente_final_id" />
+                <field name="monto_guia" required="1"/>
+                <field name="impuesto" required="1"/>
+                <field name="precio" required="1"/>
+                <field name="valor" required="1"/>
+                <field name="estado" required="1" decoration-success="estado=='pagado'" decoration-danger="estado=='nopagado'"/>
+            </tree>
+        </field>
+    </record>
+    <record id="action_view_controlguias" model="ir.actions.act_window">
+        <field name="name">Control de Guias</field>
+        <field name="res_model">control_guias</field>
+    </record>
+</odoo>
