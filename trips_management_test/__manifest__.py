@@ -30,6 +30,7 @@
         'views/trip_sourcing.xml',
         'views/trip_section.xml',
         'views/trip_trip.xml',
+        'security/ir_model_access.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

@@ -1,0 +1,81 @@
+<odoo>
+    <!--Accesos-->
+
+    <!--Guias-->
+    <record id="model_access_trip_guias" model="ir.model.access">
+        <field name="name">model.access.trip.guias</field>
+        <field name="model_id" ref="trips_management_test.model_control_guias"></field>
+        <field name="group_id" ref="base.group_system"></field>
+        <field name="perm_create" eval="1"></field>
+        <field name="perm_write" eval="1"></field>
+        <field name="perm_unlink" eval="1"></field>
+        <field name="perm_read" eval="1"></field>
+    </record>
+
+    <!--Driver-->
+    <record id="model_access_trip_driver" model="ir.model.access">
+        <field name="name">model.access.trip.driver</field>
+        <field name="model_id" ref="trips_management_test.model_trip_driver"></field>
+        <field name="group_id" ref="base.group_system"></field>
+        <field name="perm_create" eval="1"></field>
+        <field name="perm_write" eval="1"></field>
+        <field name="perm_unlink" eval="1"></field>
+        <field name="perm_read" eval="1"></field>
+    </record>
+
+    <!--Itinerarios-->
+    <record id="model_access_trip_itinerary" model="ir.model.access">
+        <field name="name">model.access.trip.itinerary</field>
+        <field name="model_id" ref="trips_management_test.model_trip_itinerary"></field>
+        <field name="group_id" ref="base.group_system"></field>
+        <field name="perm_create" eval="1"></field>
+        <field name="perm_write" eval="1"></field>
+        <field name="perm_unlink" eval="1"></field>
+        <field name="perm_read" eval="1"></field>
+    </record>
+
+    <!--Secciones-->
+    <record id="model_access_trip_section" model="ir.model.access">
+        <field name="name">model.access.trip.section</field>
+        <field name="model_id" ref="trips_management_test.model_trip_section"></field>
+        <field name="group_id" ref="base.group_system"></field>
+        <field name="perm_create" eval="1"></field>
+        <field name="perm_write" eval="1"></field>
+        <field name="perm_unlink" eval="1"></field>
+        <field name="perm_read" eval="1"></field>
+    </record>
+
+    <!--Abastecimientos-->
+    <record id="model_access_trip_sourcing" model="ir.model.access">
+        <field name="name">model.access.trip.sourcing</field>
+        <field name="model_id" ref="trips_management_test.model_trip_sourcing"></field>
+        <field name="group_id" ref="base.group_system"></field>
+        <field name="perm_create" eval="1"></field>
+        <field name="perm_write" eval="1"></field>
+        <field name="perm_unlink" eval="1"></field>
+        <field name="perm_read" eval="1"></field>
+    </record>
+
+
+    <!--Ciguenias-->
+    <record id="model_access_trip_stork" model="ir.model.access">
+        <field name="name">model.access.trip.stork</field>
+        <field name="model_id" ref="trips_management_test.model_trip_stork"></field>
+        <field name="group_id" ref="base.group_system"></field>
+        <field name="perm_create" eval="1"></field>
+        <field name="perm_write" eval="1"></field>
+        <field name="perm_unlink" eval="1"></field>
+        <field name="perm_read" eval="1"></field>
+    </record>
+
+    <!--Viajes-->
+    <record id="model_access_trip_trip" model="ir.model.access">
+        <field name="name">model.access.trip.trip</field>
+        <field name="model_id" ref="trips_management_test.model_trip_trip"></field>
+        <field name="group_id" ref="base.group_system"></field>
+        <field name="perm_create" eval="1"></field>
+        <field name="perm_write" eval="1"></field>
+        <field name="perm_unlink" eval="1"></field>
+        <field name="perm_read" eval="1"></field>
+    </record>
+</odoo>
