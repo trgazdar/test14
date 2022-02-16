@@ -12,10 +12,15 @@
                 <attribute name="invisible">1</attribute>
             </xpath>
 
-            <!--Ocultamos el grupo contrato-->
-<!--            <xpath expr="//sheet/notebook/page[1]/group[1]/group[2]" position="attributes">-->
-<!--                <attribute name="invisible">1</attribute>-->
-<!--            </xpath>-->
+            <!--Ocultamos el grupo contrato (servidor)-->
+            <xpath expr="//sheet/group[1]/group[3]" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+            <!--Ocultamos el grupo contrato (local)-->
+            <!--            <xpath expr="//sheet/notebook/page[1]/group[1]/group[2]" position="attributes">-->
+            <!--                <attribute name="invisible">1</attribute>-->
+            <!--            </xpath>-->
 
             <!--Acomodamos el campo adicional-->
             <xpath expr="sheet" position="inside">
