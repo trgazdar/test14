@@ -20,17 +20,24 @@
                 <field name="station"/>
                 <field name="odometer"/>
             </tree>
-<!--            <form string="Formulario de los cursos">-->
-<!--                <sheet>-->
-<!--                    <group colspan="2">-->
-<!--                        <group>-->
-<!--                            <field name="source"/>-->
-<!--                            <field name="station"/>-->
-<!--                            <field name="odometer"/>-->
-<!--                        </group>-->
-<!--                    </group>-->
-<!--                </sheet>-->
-<!--            </form>-->
+            <!--            <form string="Formulario de los cursos">-->
+            <!--                <sheet>-->
+            <!--                    <group colspan="2">-->
+            <!--                        <group>-->
+            <!--                            <field name="source"/>-->
+            <!--                            <field name="station"/>-->
+            <!--                            <field name="odometer"/>-->
+            <!--                        </group>-->
+            <!--                    </group>-->
+            <!--                </sheet>-->
+            <!--            </form>-->
         </field>
+    </record>
+
+    <!--ACCIONES DE VENTANA-->
+    <record model="ir.actions.act_window" id="action_list_sourcing">
+        <field name="name">trip.abastecimientos</field>
+        <field name="res_model">trip.sourcing</field>
+        <field name="view_mode">tree,form</field>
     </record>
 </odoo>

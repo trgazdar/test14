@@ -10,6 +10,7 @@
             </tree>
         </field>
     </record>
+
     <!--FORMULARIO PARA AGREGAR-->
     <record model="ir.ui.view" id="action_vista_trip_form">
         <field name="name">register.trip.form</field>
@@ -18,7 +19,7 @@
             <form string="Formulario de viajes">
                 <sheet>
                     <!--DATOS DEL VIAJE-->
-                    <group col="2" >
+                    <group col="2">
                         <group string="DATOS DEL VIAJE">
                             <field name="no_trip"/>
                             <field name="nro_rendicion"/>
@@ -36,7 +37,7 @@
                     </group>
                     <!--DETALLES DE UN VIAJE-->
                     <group col="2" string="DETALLES DEL VIAJE">
-                        <field name="stork_id"/>
+                        <!-- <field name="stork_id"/>-->
                         <field name="driver_id"/>
                     </group>
                     <group>
@@ -58,5 +59,21 @@
                 </sheet>
             </form>
         </field>
+    </record>
+
+
+    <!--ACCIONES DE VENTANA-->
+    <!--Trip-->
+    <record model="ir.actions.act_window" id="action_list_trip">
+        <field name="name">trip.viajes</field>
+        <field name="res_model">trip.trip</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!--Itinerary-->
+    <record model="ir.actions.act_window" id="action_list_itinerary">
+        <field name="name">trip.itinerarios</field>
+        <field name="res_model">trip.itinerary</field>
+        <field name="view_mode">tree,form</field>
     </record>
 </odoo>

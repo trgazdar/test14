@@ -19,15 +19,16 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base', 'fleet'],
 
     # always loaded
     'data': [
+        'security/ir_model_access.xml',
         'views/control_guias_views.xml',
-        'views/menus_actions.xml',
         'views/trip_sourcing.xml',
+        'views/trip_stork.xml',
         'views/trip_section.xml',
         'views/trip_trip.xml',
-        'security/ir_model_access.xml',
+        'views/menus_actions.xml',
     ],
 }

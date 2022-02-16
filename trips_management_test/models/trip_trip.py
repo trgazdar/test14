@@ -26,11 +26,11 @@ class trip(models.Model):
 
     # FOREING KEYS
     itinerary_id = fields.Many2one('trip.itinerary', string="Itinerario", required=True)
-    stork_id = fields.Many2one('trip.stork', string='Cigûeña', required=True)
-    #driver_id = fields.Many2one('trip.driver', string='Operador', required=True)
+    # stork_id = fields.Many2one('trip.stork', string='Cigûeña', required=True)
+    # driver_id = fields.Many2one('trip.driver', string='Operador', required=True)
     driver_id = fields.Many2one('res.partner', string='Operador', required=True)
     trip_section_ids = fields.One2many('trip.section', 'trip_trip_id', string='Tramos del viaje', required=True)
-    trip_trip_detail_ids = fields.Many2many('control_guias', string='Detalles del viaje')#, required=True)
+    trip_trip_detail_ids = fields.Many2many('control_guias', string='Detalles del viaje')  # , required=True)
 
     # CAMPOS CALCULADOS
     # viaticos = fields.Float(string='Viaticos', required=True)

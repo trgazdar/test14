@@ -1,6 +1,5 @@
 <odoo>
     <!--Accesos-->
-
     <!--Guias-->
     <record id="model_access_trip_guias" model="ir.model.access">
         <field name="name">model.access.trip.guias</field>
@@ -38,18 +37,6 @@
     <record id="model_access_trip_sourcing" model="ir.model.access">
         <field name="name">model.access.trip.sourcing</field>
         <field name="model_id" ref="trips_management_test.model_trip_sourcing"></field>
-        <field name="group_id" ref="base.group_system"></field>
-        <field name="perm_create" eval="1"></field>
-        <field name="perm_write" eval="1"></field>
-        <field name="perm_unlink" eval="1"></field>
-        <field name="perm_read" eval="1"></field>
-    </record>
-
-
-    <!--Ciguenias-->
-    <record id="model_access_trip_stork" model="ir.model.access">
-        <field name="name">model.access.trip.stork</field>
-        <field name="model_id" ref="trips_management_test.model_trip_stork"></field>
         <field name="group_id" ref="base.group_system"></field>
         <field name="perm_create" eval="1"></field>
         <field name="perm_write" eval="1"></field>

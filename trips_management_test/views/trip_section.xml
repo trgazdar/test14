@@ -39,4 +39,14 @@
             </form>
         </field>
     </record>
+
+
+    <!--ACCIONES DE VENTANA-->
+    <!--Section-->
+    <record model="ir.actions.act_window" id="action_list_section">
+        <field name="name">trip.tramos</field>
+        <field name="res_model">trip.section</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
 </odoo>

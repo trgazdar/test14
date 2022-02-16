@@ -1,16 +1,14 @@
 <odoo>
 
 
-
-
-    <record id="view_tree_tabla_control" model="ir.ui.view" >
+    <record id="view_tree_tabla_control" model="ir.ui.view">
         <field name="name">tabla_control.view.tree</field>
         <field name="model">control_guias</field>
         <field name="arch" type="xml">
             <tree string="Control de Guias" editable="bottom">
                 <field name="fecha_envio" required="1"/>
-                <field name="fecha_entrega" required="1" />
-                <field name="cliente_id" required="1" />
+                <field name="fecha_entrega" required="1"/>
+                <field name="cliente_id" required="1"/>
                 <field name="destino" required="1"/>
                 <field name="marca" required="1"/>
                 <field name="modelo" required="1"/>
@@ -19,19 +17,18 @@
                 <field name="cod_ciguena" required="1"/>
                 <field name="remitente" required="1"/>
                 <field name="num_chasis" required="1"/>
-                <field name="pikango" />
-                <field name="servintes" />
-                <field name="cliente_final_id" />
+                <field name="pikango"/>
+                <field name="servintes"/>
+                <field name="cliente_final_id"/>
                 <field name="monto_guia" required="1"/>
                 <field name="impuesto" required="1"/>
                 <field name="precio" required="1"/>
                 <field name="valor" required="1"/>
-                <field name="estado" required="1" decoration-success="estado=='pagado'" decoration-danger="estado=='nopagado'"/>
+                <field name="estado" required="1" decoration-success="estado=='pagado'"
+                       decoration-danger="estado=='nopagado'"/>
             </tree>
         </field>
     </record>
-
-
 
 
     <record id="account_withholding_form" model="ir.ui.view">
@@ -41,15 +38,15 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='payment_reference']" position="after">
                 <!-- Add your fields here -->
-                    <div class="o_row">
-                        <h5 class="oe_inline">Rango de Fecha</h5>
-                        <field name="fecha_inicial" class="oe_inline"/>
-                        <i class="fa fa-long-arrow-right mx-2" aria-label="Arrow icon" title="Arrow"/>
-                        <field name="fecha_final" class="oe_inline"/>
-                    </div>
+                <div class="o_row">
+                    <h5 class="oe_inline">Rango de Fecha</h5>
+                    <field name="fecha_inicial" class="oe_inline"/>
+                    <i class="fa fa-long-arrow-right mx-2" aria-label="Arrow icon" title="Arrow"/>
+                    <field name="fecha_final" class="oe_inline"/>
+                </div>
             </xpath>
             <xpath expr="//page[@name='other_info']" position="before">
-                <page string="Guias" name="guias" >
+                <page string="Guias" name="guias">
                     <field name="guias_control_ids"/>
                 </page>
             </xpath>
@@ -57,18 +54,16 @@
     </record>
 
 
-
-
-   <record id="view_tree_choferes" model="ir.ui.view">
+    <record id="view_tree_choferes" model="ir.ui.view">
         <field name="name">choferes.view.tree</field>
         <field name="model">choferes</field>
         <field name="arch" type="xml">
             <tree string="Resumen de pagos">
                 <field name="name"/>
                 <field name="num_viaje"/>
-                <field name="guia_servin" />
+                <field name="guia_servin"/>
                 <field name="monto"/>
-                <field name="estado" />
+                <field name="estado"/>
             </tree>
         </field>
     </record>
@@ -100,8 +95,6 @@
     </record>
 
 
-
-
     <!--Acciones de ventana-->
     <record id="action_view_controlguias" model="ir.actions.act_window">
         <field name="name">Control de Guias</field>
@@ -117,19 +110,19 @@
 
     <!--Menus-->
     <menuitem
-        id="menu_main_tabla_control"
-        parent=""
-        name="Tabla Control"/>
-        <!--action="tabla_control.action_view_controlguias"-->
+            id="menu_main_tabla_control"
+            parent=""
+            name="Tabla Control"/>
+    <!--action="tabla_control.action_view_controlguias"-->
     <menuitem
-        id="menu_controlguias"
-        name="Control de guias"
-        parent="tabla_control.menu_main_tabla_control"
-        action="tabla_control.action_view_controlguias"/>
+            id="menu_controlguias"
+            name="Control de guias"
+            parent="tabla_control.menu_main_tabla_control"
+            action="tabla_control.action_view_controlguias"/>
     <menuitem
-        id="menu_choferes"
-        name="Pago a choferes"
-        parent="tabla_control.menu_main_tabla_control"
-        action="tabla_control.action_view_choferes"/>
+            id="menu_choferes"
+            name="Pago a choferes"
+            parent="tabla_control.menu_main_tabla_control"
+            action="tabla_control.action_view_choferes"/>
 
 </odoo>

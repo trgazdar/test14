@@ -1,51 +1,28 @@
 <odoo>
-    <!--ACCIONES DE VENTANA-->
-    <!--Sourcing-->
-    <record model="ir.actions.act_window" id="action_list_sourcing">
-        <field name="name">trip.abastecimientos</field>
-        <field name="res_model">trip.sourcing</field>
-        <field name="view_mode">tree,form</field>
-    </record>
-    <!--Section-->
-    <record model="ir.actions.act_window" id="action_list_section">
-        <field name="name">trip.tramos</field>
-        <field name="res_model">trip.section</field>
-        <field name="view_mode">tree,form</field>
-    </record>
-    <!--Trip-->
-    <record model="ir.actions.act_window" id="action_list_trip">
-        <field name="name">trip.viajes</field>
-        <field name="res_model">trip.trip</field>
-        <field name="view_mode">tree,form</field>
-    </record>
-    <!--Itinerary-->
-    <record model="ir.actions.act_window" id="action_list_itinerary">
-        <field name="name">trip.itinerarios</field>
-        <field name="res_model">trip.itinerary</field>
-        <field name="view_mode">tree,form</field>
-    </record>
-    <!--Stork-->
-    <record model="ir.actions.act_window" id="action_list_stork">
-        <field name="name">trip.ciguenias</field>
-        <field name="res_model">trip.stork</field>
-        <field name="view_mode">tree,form</field>
-    </record>
+    <!--MENUS-->
 
-
-    
-    <!--CREAMOS MENUS-->
+    <!--Viajes-->
     <menuitem id="trip_main_menu"
               name="Gestion de Viajes"/>
+
     <menuitem id="trip_main_menu_register_viajes"
               name="Viajes"
               parent="trip_main_menu"
               action="action_list_trip"/>
+
+    <menuitem id="trip_main_menu_register_mantemientos"
+              name="Mantenimientos"
+              parent="trip_main_menu"
+              action="action_list_trip"/>
+
+
+    <!--Control Guias-->
     <menuitem
-              id="menu_main_tabla_control"
-              name="Tabla Control"/>
+            id="menu_main_tabla_control"
+            name="Tabla Control"/>
     <menuitem
-              id="menu_controlguias"
-              name="Control de guias"
-              parent="menu_main_tabla_control"
-              action="action_view_controlguias"/>
+            id="menu_controlguias"
+            name="Control de guias"
+            parent="menu_main_tabla_control"
+            action="action_view_controlguias"/>
 </odoo>
