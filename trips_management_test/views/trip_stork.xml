@@ -12,6 +12,23 @@
                 <attribute name="invisible">1</attribute>
             </xpath>
 
+            <!--Acomodamos el campo adicional-->
+            <xpath expr="//sheet/div[2]/h1[1]" position="after">
+                <label for="stork_code"/>
+                <group col="2">
+                    <group>
+                        <field name="stork_code" nolabel="1"/>
+                    </group>
+                </group>
+            </xpath>
+
+            <!--            <xpath expr="sheet" position="inside">-->
+            <!--                <group>-->
+            <!--                    <field name="stork_code"/>-->
+            <!--                </group>-->
+            <!--            </xpath>-->
+
+
             <!--Ocultamos el grupo contrato (servidor)-->
             <xpath expr="//sheet/group[1]/group[3]" position="attributes">
                 <attribute name="invisible">1</attribute>
@@ -22,12 +39,6 @@
             <!--                <attribute name="invisible">1</attribute>-->
             <!--            </xpath>-->
 
-            <!--Acomodamos el campo adicional-->
-            <xpath expr="sheet" position="inside">
-                <group>
-                    <field name="stork_code"/>
-                </group>
-            </xpath>
         </field>
     </record>
 </odoo>
