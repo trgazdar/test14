@@ -14,8 +14,8 @@
 
             <!--Acomodamos el campo adicional-->
             <xpath expr="//sheet/div[2]/h1[1]" position="after">
-                <label for="stork_code"/>
                 <group col="2">
+                    <label for="stork_code"/>
                     <group>
                         <field name="stork_code" nolabel="1"/>
                     </group>
