@@ -7,10 +7,10 @@
         <field name="model">fleet.vehicle</field>
         <field name="inherit_id" ref="fleet.fleet_vehicle_view_form"/>
         <field name="arch" type="xml">
-<!--            &lt;!&ndash;Ocultamos el grupo conductor&ndash;&gt;-->
-<!--            <xpath expr="//sheet/group[1]/group[1]" position="attributes">-->
-<!--                <attribute name="invisible">1</attribute>-->
-<!--            </xpath>-->
+            <!--Ocultamos el grupo conductor-->
+            <xpath expr="//sheet/group[1]/group[1]" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
 
             <!--Ocultamos el grupo contrato-->
 <!--            <xpath expr="//sheet/notebook/page[1]/group[1]/group[2]" position="attributes">-->
